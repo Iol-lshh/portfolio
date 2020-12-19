@@ -11,7 +11,7 @@ Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
 >협업 깃 주소 : https://github.com/HyunJun-K/LTNS_Spring   
 
 
-sp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
+Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
 -------
 >기간 : 2020.11   
 >JSP + Apach Tomcat   
