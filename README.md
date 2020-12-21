@@ -1,6 +1,5 @@
 # portfolio
 포트폴리오입니다.
-https://blog.naver.com/markhong93
 
 Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
 -------
@@ -27,3 +26,8 @@ Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기
 >Java + Java Swing   
 >-구조 기획/설계, 서버 설정/제작, 프로그래밍   
 >전체 기여도 50% (5명)   
+
+
+개인 블로그
+--------
+>https://blog.naver.com/markhong93
