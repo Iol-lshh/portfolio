@@ -1,0 +1,75 @@
+.comment_area {
+	min-height: 10rem;
+	resize: none;
+}
+
+#zeroData {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+}
+
+.alert {
+	margin-bottom: 0.25rem;
+}
+
+.alertBox {
+	display: flex;
+	justify-content: space-between;
+}
+
+.alert-success:hover {
+	background-color: #28a745;
+	color: #f8f9fa;
+}
+
+.alert-warning:hover {
+	background-color: #ffc107;
+	color: #f8f9fa;
+}
+
+.inserBtn, .trashBtn, .declarationBtn {
+	cursor: pointer;
+}
+
+.inserBtn:active {
+	color: #dc3545;
+	transform: scale(0.98);
+	opacity: 0.8;
+}
+
+.inserBtn:hover {
+	color: #fd7e14;
+}
+
+.trashBtn:active {
+	color: #fd7e14;
+	transform: scale(0.98);
+	opacity: 0.8;
+}
+
+.trashBtn:hover {
+	color: #dc3545;
+}
+
+.declarationBtn:active {
+	transform: scale(0.98);
+	opacity: 0.8;
+}
+
+#downArrow {
+	transition: transform 0.5s ease-in-out;
+}
+
+#downArrow.active {
+	transform: rotate(180deg);
+}
+
+#commentBtn {
+	cursor: pointer;
+}
+
+.hide {
+	display: none;
+}

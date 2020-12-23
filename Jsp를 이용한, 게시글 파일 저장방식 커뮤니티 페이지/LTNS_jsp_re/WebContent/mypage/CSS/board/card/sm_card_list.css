@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+a.sm_card_list {
+	display : block;
+	padding:6.2px;
+    border-top: 1px solid #e3e3e3;
+}
+
+a.sm_card_list p, a.sm_card_list time{
+	display:inline-block;
+}
+
+div.sm_card_list-metadata{
+	float:right;
+	width : 20%;	
+}
+div.sm_card_list-metadata p{
+	margin-bottom: 0;
+}
+div.card_post-main{
+	margin-top:10px;
+	width:100%;
+	text-align: left;
+}
+@media (min-width:768px){
+	div.card_post-main{
+	width:80%;
+	}	
+	#mycomment_board{
+		margin:0;
+	}
+}
+p.sm_card_list-title{
+	width : 70%;
+	font-size:13px;
+	height: 17px;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #4c4c4c;
+    font-size: 14px;
+}
+
+p.sm_card_list-writer{
+	font-size:10px;
+	margin-right: 10px;
+	color:#a6a6a6;
+}
+
+time.sm_card_list-regdate{
+	font-size:10px;
+	color:#a6a6a6;
+}
+
+div.card_post-picture{
+	float:right;
+	width:19%;
+	text-align: center;
+	height:144px;
+	overflow: hidden;
+}
+.card_post-picture img{
+	max-width:100%;
+	height:auto;
+	border-radius:0.25rem;
+}
+
+p.card_post-contents{
+	float:left;
+	width:79%;
+	margin-bottom: 5px;
+    height: 100px;
+    line-height: 18px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    color: #4c4c4c;
+    font-size: 13px;
+    word-break:break-all;
+}

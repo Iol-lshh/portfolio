@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#mypost_board{
+	float: left;
+    margin: 0 5px 5px 0;
+    width: 100%;
+    border: 1px solid #e3e3e3;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+@media (min-width:768px){
+	#mypost_board{
+		width:49%;
+	}
+}

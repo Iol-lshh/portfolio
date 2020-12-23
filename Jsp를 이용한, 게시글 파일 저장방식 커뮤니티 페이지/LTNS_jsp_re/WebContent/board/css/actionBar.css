@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.actionBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.actionBtn > i {
+	font-size: 1.25rem;
+}

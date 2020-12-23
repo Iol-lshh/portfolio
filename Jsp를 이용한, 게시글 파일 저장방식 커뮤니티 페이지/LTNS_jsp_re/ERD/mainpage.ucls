@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="main.java.com.model.DTO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/DTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="70" width="128" x="3601" y="745"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="main.java.com.command.mainpage.Mainpage_Command" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/command/mainpage/Mainpage_Command.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="342" x="2161" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="main.java.com.model.mainpage.File_DAO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/mainpage/File_DAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="520" width="313" x="1098" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="main.java.com.model.mainpage.MM_DAO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/mainpage/MM_DAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="520" width="313" x="1451" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="main.java.com.model.mainpage.File_DTO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/mainpage/File_DTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="358" width="216" x="3510" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="main.java.com.model.mainpage.Mainpage_DAO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/mainpage/Mainpage_DAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="592" width="317" x="1804" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="main.java.com.command.By_AJAX" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/command/By_AJAX.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="383" x="2543" y="745"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="main.java.com.model.mainpage.Post_DTO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/mainpage/Post_DTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="682" width="442" x="3028" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="main.java.com.model.membermanage.MM_DTO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/membermanage/MM_DTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="430" width="293" x="3766" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="main.java.com.controller.DoController" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/controller/DoController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="347" x="146" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="main.java.com.command.Command" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/command/Command.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="88" width="342" x="2161" y="745"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="12" language="java" name="main.java.com.model.DAO" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/DAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="412" width="313" x="1451" y="745"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="13" language="java" name="main.java.com.model.DB" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/DB.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="128" x="533" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="14" language="java" name="main.java.com.model.JSON" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/JSON.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="286" width="162" x="4099" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="main.java.com.controller.AjaxController" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/controller/AjaxController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="357" x="701" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="main.java.com.command.mainpage.Mainpage_Add_NearestBoard_Command_By_AJAX" 
+    project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/command/mainpage/Mainpage_Add_NearestBoard_Command_By_AJAX.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="178" width="445" x="2543" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="main.java.com.model.Post_Contents" project="LTNS_jsp_re" 
+    file="/LTNS_jsp_re/src/main/java/com/model/Post_Contents.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="198" x="3028" y="745"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="18">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="19">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <realization id="20">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <realization id="21">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <realization id="22">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <realization id="24">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="25">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="26">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="27" name="list"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="30" name="post_contents"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="32">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

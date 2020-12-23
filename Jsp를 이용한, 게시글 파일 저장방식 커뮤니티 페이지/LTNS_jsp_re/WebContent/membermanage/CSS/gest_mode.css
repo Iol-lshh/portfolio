@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+.hanna * {
+ font-family: 'Hanna', fantasy;
+}
+
+
+body {
+	background-color: black;
+}
+
+
+.main_article {
+	text-align: center;	
+	margin-top: 80px;
+	
+}
+
+.main_article #img_id{
+	width: 50%;
+	height: 350px;
+}
+
+.main_article #img_id:hover{
+	cursor: pointer;
+}
+
+.gest_header {
+	font-size: 40px;
+	font-style: italic;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+.div_box {	
+	margin-top: 10px;
+	text-align: center;
+	color:white;
+	font-size: 22px;
+}
+.gest_articles{
+	text-align: left;
+	justify-content: center;
+	display: flex;
+	font-family: 'Hanna', fantasy;
+	letter-spacing: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+button {
+	background-color: white;
+	border: 0px;
+	padding: 10px;
+	border-radius: 16px;
+	margin: 10px;
+	margin-top: 15px;
+	font-family: 'Hanna', fantasy;
+}
+
+button:hover {
+	cursor: pointer;
+	color: tomato;
+}
+
+.hidden button{
+	background-color: black;
+}

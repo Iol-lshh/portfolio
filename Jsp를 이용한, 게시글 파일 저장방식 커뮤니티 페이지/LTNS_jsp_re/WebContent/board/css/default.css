@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5vw;
+	line-height: 1.2em;
+	color: #333;
+	box-sizing: border-box;
+	border-color: currentColor;
+}
+
+.clear {
+	clear: both;
+}
+/* 변수 정하기 */
+:root { 
+	-main-bg-color: #fff; 
+	-main-font-color: #333;
+	-border-color: #cdd; 
+	-btn-font-color: #fff; 
+	-btn-bg-color: #78aeda; 
+	-btn-bg-hover-color: #438fce; 
+	-btn-font-hover-color: rgb(255, 191, 191); 
+	-box-border-color: #b2b3b4;
+}
+
+[class*="-1"] {
+	display: flexbox;
+	flex: 1;
+}
+
+[class*="-2"] {
+	display: flexbox;
+	flex: 2;
+}
+
+[class*="-3"] {
+	display: flexbox;
+	flex: 3;
+}
+
+[class*="-4"] {
+	display: flexbox;
+	flex: 4;
+}
+
+[class*="-5"] {
+	display: flexbox;
+	flex: 5;
+}
+
+[class*="-6"] {
+	display: flexbox;
+	flex: 6;
+}
+
+[class*="-7"] {
+	display: flexbox;
+	flex: 7;
+}
+
+[class*="-8"] {
+	display: flexbox;
+	flex: 8;
+}
+
+[class*="-9"] {
+	display: flexbox;
+	flex: 9;
+}
+
+[class*="-10"] {
+	display: flexbox;
+	flex: 10;
+}
+
+[class*="-11"] {
+	display: flexbox;
+	flex: 11;
+}
+
+[class*="-12"] {
+	display: flexbox;
+	flex: 12;
+}
+
+body {
+	background-color: #fff;
+}
+
+#wrap {
+	margin: 0 auto 0;
+	background-color: #fff;
+	border: solid 1px transparent;
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	font-weight: 700;
+	color: #438fce;
+}
+
+/* 600 해상도 (스마트폰) default */
+@media ( max-width :600px) {
+	* {
+		font-size: 2vw;
+	}
+}
+
+body {
+	background: #fff;
+}
+
+#wrap {
+	width: 100%;
+	min-height: 600px;
+}
+/* 780 해상도 (테블릿) */
+@media ( max-width :780px) {
+}
+/* 780 해상도 이상 (pc) */
+@media ( min-width :781px) {
+}
+/* 1024px 해상도 이상 */
+@media ( min-width :1024px) {
+	* {
+		font-size: 1em;
+	}
+	body {
+		background-color: #fdddd9;
+	}
+	#wrap {
+		width: 1024px;
+		margin: 0 auto 0;
+		background-color: #ffffff;
+		background-size: 1024px;
+		background-repeat: repeat-y;
+		border: solid 1px transparent;
+		height: 100vh;
+		
+	}
+}

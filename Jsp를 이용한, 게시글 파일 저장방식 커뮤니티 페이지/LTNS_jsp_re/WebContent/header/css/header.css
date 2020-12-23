@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+div#login{
+	float:right;	
+}
+.navbar__logo {
+	width: 350px;
+}
+header{
+	background: #caeeee;
+}
+.hide {
+	display: none;
+}
