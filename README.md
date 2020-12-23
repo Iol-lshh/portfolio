@@ -16,7 +16,7 @@ Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
 >JSP + Apach Tomcat   
 >-전체 구조 기획/설계, 서버 설정/구축, CRUD 기본 페이지 제작, 파일 HTML 파싱   
 >전체 기여도 40% (4명)   
-
+>시연 유튜브 : https://www.youtube.com/watch?v=tLHih5xjFKA
 
 
 
