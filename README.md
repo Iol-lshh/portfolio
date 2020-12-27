@@ -16,8 +16,8 @@ Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
 >JSP + Apach Tomcat   
 >-전체 구조 기획/설계, 서버 설정/구축, CRUD 기본 페이지 제작, 파일 HTML 파싱   
 >전체 기여도 35% (4명)   
->[시연 유튜브](https://www.youtube.com/watch?v=tLHih5xjFKA)
->[pdf](https://github.com/markhong93/portfolio/blob/main/Jsp%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EA%B2%8C%EC%8B%9C%EA%B8%80%20%ED%8C%8C%EC%9D%BC%20%EC%A0%80%EC%9E%A5%EB%B0%A9%EC%8B%9D%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80/Jsp%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EA%B2%8C%EC%8B%9C%EA%B8%80%20%ED%8C%8C%EC%9D%BC%20%EC%A0%80%EC%9E%A5%EB%B0%A9%EC%8B%9D%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80.pdf)   
+>[시연 유튜브 링크](https://www.youtube.com/watch?v=tLHih5xjFKA)   
+>[pdf 링크](https://github.com/markhong93/portfolio/blob/main/Jsp%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EA%B2%8C%EC%8B%9C%EA%B8%80%20%ED%8C%8C%EC%9D%BC%20%EC%A0%80%EC%9E%A5%EB%B0%A9%EC%8B%9D%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80/Jsp%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EA%B2%8C%EC%8B%9C%EA%B8%80%20%ED%8C%8C%EC%9D%BC%20%EC%A0%80%EC%9E%A5%EB%B0%A9%EC%8B%9D%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80.pdf)   
 
 
 Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기 
@@ -26,7 +26,7 @@ Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기
 >Java + Java Swing   
 >-구조 기획/설계, 서버 설정/제작, 프로그래밍   
 >전체 기여도 50% (5명)   
->[pdf](https://github.com/markhong93/portfolio/blob/main/Java%20Swing%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8C%EB%B8%94%EB%A6%BF%20%EB%A9%94%EB%89%B4%ED%8C%90%20%EC%97%B0%EB%8F%99%20%EC%9D%8C%EC%8B%9D%EC%A0%90%20%ED%8F%AC%EC%8A%A4%EA%B8%B0/Java%20Swing%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8C%EB%B8%94%EB%A6%BF%20%EB%A9%94%EB%89%B4%ED%8C%90%20%EC%97%B0%EB%8F%99%20%EC%9D%8C%EC%8B%9D%EC%A0%90%20%ED%8F%AC%EC%8A%A4%EA%B8%B0.pdf)   
+>[pdf 링크](https://github.com/markhong93/portfolio/blob/main/Java%20Swing%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8C%EB%B8%94%EB%A6%BF%20%EB%A9%94%EB%89%B4%ED%8C%90%20%EC%97%B0%EB%8F%99%20%EC%9D%8C%EC%8B%9D%EC%A0%90%20%ED%8F%AC%EC%8A%A4%EA%B8%B0/Java%20Swing%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8C%EB%B8%94%EB%A6%BF%20%EB%A9%94%EB%89%B4%ED%8C%90%20%EC%97%B0%EB%8F%99%20%EC%9D%8C%EC%8B%9D%EC%A0%90%20%ED%8F%AC%EC%8A%A4%EA%B8%B0.pdf)   
    
    
    
@@ -34,4 +34,4 @@ Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기
 --------
 >개인 블로그 : https://blog.naver.com/markhong93   
 >  
->MVC패턴을 위한 구조 제안 : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/MVC%ED%8C%A8%ED%84%B4%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EA%B5%AC%EC%A1%B0%20%EC%A0%9C%EC%95%88.md   
+>[MVC패턴을 위한 구조 제안](https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/MVC%ED%8C%A8%ED%84%B4%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EA%B5%AC%EC%A1%B0%20%EC%A0%9C%EC%95%88.md)   
