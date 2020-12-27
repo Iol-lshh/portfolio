@@ -17,7 +17,7 @@ Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
 >-전체 구조 기획/설계, 서버 설정/구축, CRUD 기본 페이지 제작, 파일 HTML 파싱   
 >전체 기여도 35% (4명)   
 >[Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지.pdf](https://github.com/markhong93/portfolio/blob/main/Jsp%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EA%B2%8C%EC%8B%9C%EA%B8%80%20%ED%8C%8C%EC%9D%BC%20%EC%A0%80%EC%9E%A5%EB%B0%A9%EC%8B%9D%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80/Jsp%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EA%B2%8C%EC%8B%9C%EA%B8%80%20%ED%8C%8C%EC%9D%BC%20%EC%A0%80%EC%9E%A5%EB%B0%A9%EC%8B%9D%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80.pdf)   
->[시연 유튜브 링크](https://www.youtube.com/watch?v=tLHih5xjFKA)   
+>[Java 프레임웍기반 풀스텍 양성(B) 1차프로젝트발표 - 팀:LTNS (유튜브 )](https://www.youtube.com/watch?v=tLHih5xjFKA)   
    
 
 Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기 
