@@ -1,7 +1,7 @@
 # portfolio
 포트폴리오입니다.
 
-Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
+Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지(진행중.. ~ 1/4발표)
 -------
 >기간 : 2020.12   
 >스프링 + Apache Tomcat + MyBatis   
