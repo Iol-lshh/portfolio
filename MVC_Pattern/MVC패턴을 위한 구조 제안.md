@@ -57,8 +57,8 @@
 >>>>>jdbc-context.xml   
 >>>>>사용할 디비 관련 스프링설정파일   
 >>>>>(ex mybatis-context.xml or jpa-context.xml 등..)   
->>>   
->>>views   
+>>   
+>>views   
 >>>>각자 jsp 등의 페이지 폴더 구상. 알아서...   
     
 페이지 리소스 파일
