@@ -26,6 +26,7 @@ Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기
 >Java + Java Swing   
 >-구조 기획/설계, 서버 설정/제작, 프로그래밍   
 >전체 기여도 50% (5명)   
+>MVC패턴을 위한 구조 제안 : https://github.com/markhong93/portfolio/blob/main/MVC%20%ED%8C%A8%ED%84%B4%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EA%B5%AC%EC%A1%B0%20%EC%A0%9C%EC%95%88.md
 
 
 개인 블로그
