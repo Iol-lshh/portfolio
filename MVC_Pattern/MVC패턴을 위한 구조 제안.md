@@ -1,79 +1,79 @@
-±¸Á¶ Á¦¾È
+êµ¬ì¡° ì œì•ˆ
 ==============
     
-ÇÁ·Î±×·¥ ¼Ò½º
+í”„ë¡œê·¸ëž¨ ì†ŒìŠ¤
 --------
->src/main/java/com/(¼­ºñ½º ¸í)   
->>domain µµ¸ÞÀÎ(¸ðµ¨)   
->>>DAO.java(ÀÎÅÍÆäÀÌ½º)   
+>src/main/java/com/(ì„œë¹„ìŠ¤ ëª…)   
+>>domain ë„ë©”ì¸(ëª¨ë¸)   
+>>>DAO.java(ì¸í„°íŽ˜ì´ìŠ¤)   
 >>>>select(VO vo)   
 >>>>insert(VO vo)   
 >>>>delete(VO vo)   
 >>>>update(VO vo)   
->>>>=>º¹¼ö µ¥ÀÌÅÍ »ðÀÔ, ¼öÁ¤Àº batch ÀÌ¿ëÀ» Àû±Ø ÃßÃµ   
+>>>>=>ë³µìˆ˜ ë°ì´í„° ì‚½ìž…, ìˆ˜ì •ì€ batch ì´ìš©ì„ ì ê·¹ ì¶”ì²œ   
 >>>   
->>>DTO.java(±øÅëÀÎÅÍÆäÀÌ½º)   
->>>: µ¥ÀÌÅÍ È°¿ë ¿ëµµ   
+>>>DTO.java(ê¹¡í†µì¸í„°íŽ˜ì´ìŠ¤)   
+>>>: ë°ì´í„° í™œìš© ìš©ë„   
 >>>   
->>>VO.java(±øÅëÀÎÅÍÆäÀÌ½º)   
->>>: DB·ÎÀÇ µ¥ÀÌÅÍ ¿äÃ»¿ë   
->>>»ùÇÃ : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_PostVO.java   
->>>±øÅë ÀÎÅÍÆäÀÌ½º¸¦ È°¿ëÇÏ´Â ÀÌÀ¯ : ´ÙÇü¼º, À¯Áöº¸¼ö Çâ»ó   
+>>>VO.java(ê¹¡í†µì¸í„°íŽ˜ì´ìŠ¤)   
+>>>: DBë¡œì˜ ë°ì´í„° ìš”ì²­ìš©   
+>>>ìƒ˜í”Œ : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_PostVO.java   
+>>>ê¹¡í†µ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ í™œìš©í•˜ëŠ” ì´ìœ  : ë‹¤í˜•ì„±, ìœ ì§€ë³´ìˆ˜ í–¥ìƒ   
 >>>
 >>>AjaxResult.java   
 >>>: REST response   
->>>»ùÇÃ : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_AjaxResult
+>>>ìƒ˜í”Œ : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_AjaxResult
 >>>
 >>>AjaxList.java   
 >>>: extends AjaxResult   
->>>º¹¼ö µ¥ÀÌÅÍ Àü¼Û ½Ã   
->>>»ùÇÃ : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_AjaxList
+>>>ë³µìˆ˜ ë°ì´í„° ì „ì†¡ ì‹œ   
+>>>ìƒ˜í”Œ : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_AjaxList
 >>>   
->>>°¢ÀÚ ¼­ºñ½º¿¡ ÇÊ¿äÇÑ ÆÐÅ°Áö   
->>>>DAO, DTO, VO »ó¼Ó
->>>> ex) DAO.java(°ø¿ë) > PostDAO.java > PostDAO.xml (¸ÅÇÎ ¹æ½Ä)
->>>>  (±¸ÇöÀº ¾Ë¾Æ¼­, ¸ÅÆÛÆÄÀÏ(xml)µµ ÁÁ°í impl ÀÚ¹ÙÅ¬·¡½ºµµ ÁÁ°í => impl°æ¿ì Áß°£ ¸Å°³Ã¼ abstract Å¬·¡½º »ý¼º ÃßÃµ-implÀÇ ±¸¼ºÀÌ Ãß»ó¸Þ¼ÒµåµéÀ» ÀüºÎ ³ª¿­ÇÏÁö ¾Ê¾Æµµ µÇ¼­, ´Ü¼øÇØÁü)
->>>> ex) DAO.java(°ø¿ë) > AbstractDAO.java(°ø¿ë) > PostDAO.java (ÀÚ¹Ù ±¸Çö ¹æ½Ä)
->>>> voÀÇ °æ¿ì type ÁÖ´Â°É ÃßÃµ! // type : count, one, list, all µî..   
->>>> dtoÀÇ °æ¿ì ´ç¿¬ÇÑ°ÅÁö¸¸, builder ÆÐÅÏ È°¿ë Àû±Ø ÃßÃµ   
+>>>ê°ìž ì„œë¹„ìŠ¤ì— í•„ìš”í•œ íŒ¨í‚¤ì§€   
+>>>>DAO, DTO, VO ìƒì†
+>>>> ex) DAO.java(ê³µìš©) > PostDAO.java > PostDAO.xml (ë§¤í•‘ ë°©ì‹)
+>>>>  (êµ¬í˜„ì€ ì•Œì•„ì„œ, ë§¤í¼íŒŒì¼(xml)ë„ ì¢‹ê³  impl ìžë°”í´ëž˜ìŠ¤ë„ ì¢‹ê³  => implê²½ìš° ì¤‘ê°„ ë§¤ê°œì²´ abstract í´ëž˜ìŠ¤ ìƒì„± ì¶”ì²œ-implì˜ êµ¬ì„±ì´ ì¶”ìƒë©”ì†Œë“œë“¤ì„ ì „ë¶€ ë‚˜ì—´í•˜ì§€ ì•Šì•„ë„ ë˜ì„œ, ë‹¨ìˆœí•´ì§)
+>>>> ex) DAO.java(ê³µìš©) > AbstractDAO.java(ê³µìš©) > PostDAO.java (ìžë°” êµ¬í˜„ ë°©ì‹)
+>>>> voì˜ ê²½ìš° type ì£¼ëŠ”ê±¸ ì¶”ì²œ! // type : count, one, list, all ë“±..   
+>>>> dtoì˜ ê²½ìš° ë‹¹ì—°í•œê±°ì§€ë§Œ, builder íŒ¨í„´ í™œìš© ì ê·¹ ì¶”ì²œ   
 >>   
->>controller ÄÁÆ®·Ñ·¯   
+>>controller ì»¨íŠ¸ë¡¤ëŸ¬   
 >>   
->>service ¼­ºñ½º   
+>>service ì„œë¹„ìŠ¤   
    
-Å×½ºÆ® ÇÁ·Î±×·¥ ¼Ò½º   
+í…ŒìŠ¤íŠ¸ í”„ë¡œê·¸ëž¨ ì†ŒìŠ¤   
 ---------
->src/test/java/com/(¼­ºñ½º ¸í)   
+>src/test/java/com/(ì„œë¹„ìŠ¤ ëª…)   
    
    
    
-ÆäÀÌÁö   
+íŽ˜ì´ì§€   
 ---------
 >WEB-INF   
 >>spring   
->>>>root-context (°øÅë »ç¿ë ÇùÀÇÇÊ¿ä)   
+>>>>root-context (ê³µí†µ ì‚¬ìš© í˜‘ì˜í•„ìš”)   
 >>>>appServlet   
 >>>>jdbc   
 >>>>>jdbc-context.xml   
->>>>>»ç¿ëÇÒ µðºñ °ü·Ã ½ºÇÁ¸µ¼³Á¤ÆÄÀÏ   
->>>>>(ex mybatis-context.xml or jpa-context.xml µî..)   
+>>>>>ì‚¬ìš©í•  ë””ë¹„ ê´€ë ¨ ìŠ¤í”„ë§ì„¤ì •íŒŒì¼   
+>>>>>(ex mybatis-context.xml or jpa-context.xml ë“±..)   
 >>   
 >>views   
->>>>°¢ÀÚ jsp µîÀÇ ÆäÀÌÁö Æú´õ ±¸»ó. ¾Ë¾Æ¼­...   
+>>>ê°ìž jsp ë“±ì˜ íŽ˜ì´ì§€ í´ë” êµ¬ìƒ. ì•Œì•„ì„œ...   
     
-ÆäÀÌÁö ¸®¼Ò½º ÆÄÀÏ
+íŽ˜ì´ì§€ ë¦¬ì†ŒìŠ¤ íŒŒì¼
 ---------
 >webapp/resources   
 >>css   
->>>°¢ÀÚ ÆäÀÌÁö¿¡ ÇÊ¿äÇÑ css Æú´õ ±¸»ó. ¾Ë¾Æ¼­...    
+>>>ê°ìž íŽ˜ì´ì§€ì— í•„ìš”í•œ css í´ë” êµ¬ìƒ. ì•Œì•„ì„œ...    
 >>   
 >>js   
->>>°¢ÀÚ ÆäÀÌÁö¿¡ ÇÊ¿äÇÑ js Æú´õ ±¸»ó. ¾Ë¾Æ¼­...   
+>>>ê°ìž íŽ˜ì´ì§€ì— í•„ìš”í•œ js í´ë” êµ¬ìƒ. ì•Œì•„ì„œ...   
 
     
-¸ÅÆÛ ÆÄÀÏ
+ë§¤í¼ íŒŒì¼
 --------- 
->src/main/resources/com/(¼­ºñ½º ¸í)   
+>src/main/resources/com/(ì„œë¹„ìŠ¤ ëª…)   
 >>domain   
->>>°¢ÀÚ µµ¸ÞÀÎ°ú µ¿ÀÏÇÑ Æú´õ¸í ¹× °æ·Î   
->>>>DAO ¸ÅÆÛÆÄÀÏ   
+>>>ê°ìž ë„ë©”ì¸ê³¼ ë™ì¼í•œ í´ë”ëª… ë° ê²½ë¡œ   
+>>>>DAO ë§¤í¼íŒŒì¼   
