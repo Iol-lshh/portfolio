@@ -7,7 +7,7 @@ Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지(진행
 >스프링 + Apache Tomcat + MyBatis   
 >-전체 구조 기획/설계, 서버 설정/구축, RESTful API 제작(SPA 지향)   
 >전체 기여도 35% (3명)   
-
+>[Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지.pdf](https://github.com/markhong93/portfolio/blob/main/Spring%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EA%B3%B5%EC%82%AC%20api%20%ED%99%9C%EC%9A%A9%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80/Spring%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%2C%20%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EA%B3%B5%EC%82%AC%20api%20%ED%99%9C%EC%9A%A9%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%ED%8E%98%EC%9D%B4%EC%A7%80.pdf)   
 
 
 Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
