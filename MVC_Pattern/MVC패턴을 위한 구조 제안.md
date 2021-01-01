@@ -17,7 +17,7 @@
 >>>   
 >>>VO.java(깡통인터페이스)   
 >>>: DB로의 데이터 요청용에 적합(읽기 용도이므로..)   
->>>샘플 : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/PostVO_sample.java   
+>>>상속 샘플 : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/PostVO_sample.java   
 >>>깡통 인터페이스를 활용하는 이유 : 다형성, 유지보수 향상   
 >>>
 >>>AjaxResult.java   
