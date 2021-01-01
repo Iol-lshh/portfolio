@@ -11,17 +11,12 @@
 >>>>delete(VO vo)   
 >>>>update(VO vo)   
 >>>>=>복수 데이터 삽입, 수정은 batch 이용을 적극 추천   
->>>
->>>Entity.java(깡통 인터페이스)   
->>> DB 데이터 1대1 매칭 용도   
->>> @Entity   
->>> 샘플 : 
 >>>   
 >>>DTO.java(깡통인터페이스)   
 >>>: 데이터 활용 용도   
 >>>   
 >>>VO.java(깡통인터페이스)   
->>>: DB로의 데이터 요청용   
+>>>: DB로의 데이터 요청용에 적합(읽기 용도이므로..)   
 >>>샘플 : https://github.com/markhong93/portfolio/blob/main/MVC_Pattern/sample_PostVO.java   
 >>>깡통 인터페이스를 활용하는 이유 : 다형성, 유지보수 향상   
 >>>
