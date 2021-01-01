@@ -13,29 +13,41 @@ import lombok.NoArgsConstructor;
 @Data
 public class PostVO implements VO {
 	
-	/*¿äÃ» Å¸ÀÔ*/
+	/*ìš”ì²­ íƒ€ì…*/
 	private String type;	//count, one, list, all
 	
-	/*ÆäÀÌÁö ¿äÃ» µ¥ÀÌÅÍ*/
-	private String orderBy;	 //¿äÃ» Á¤·Ä ¹æ½Ä	
+	/*í˜ì´ì§€ ìš”ì²­ ë°ì´í„°*/
+	private String orderBy;	 //ìš”ì²­ ì •ë ¬ ë°©ì‹	
 	
-	private int fromRow;	//°¡Á®¿Ã ½ÃÀÛ row
-	private int numOfRows;	//ÇÑ ÆäÀÌÁö¿¡ ¸®½ºÆ®ÇÒ dto °¹¼ö
+	private int fromRow;	//ê°€ì ¸ì˜¬ ì‹œì‘ row
+	private int numOfRows;	//í•œ í˜ì´ì§€ì— ë¦¬ìŠ¤íŠ¸í•  dto ê°¯ìˆ˜
 	
-	private int pageNo;	//¹Ù²Ü ÆäÀÌÁö
+	private int pageNo;	//ë°”ê¿€ í˜ì´ì§€
 	
-	/*µ¥ÀÌÅÍ °´Ã¼Çü*/
+	/*ë°ì´í„° ê°ì²´í˜•*/
 	private DTO dto;
 	private List<DTO> list;
 	private Object obj;
 	
-	/*µ¥ÀÌÅÍ ³¹°³Çü*/
+	/*ë°ì´í„° ë‚±ê°œí˜•*/
 	private int post_id;
 	private String post_title;
 	private String post_contents;
 	private int um_uid;
 	private String um_username;
 	private String post_regdate;
-	private String ra_code;	//ÈŞ°Ô¼Ò Á¤º¸
+	private String ra_code;	//íœ´ê²Œì†Œ ì •ë³´
 	private String post_reported;
+	
+	//ê°ì²´ ë¹„êµìš©
+	public boolean equals(Object obj){
+		if(this == o) return true;
+		if(o==null||getClass()!=o.getClass()) return false;
+		
+		PostVO tmp=(PostVO) obj;
+		return Objects.equals(post_id,tmp.post_id);
+	};
+	public int hashCode(){
+		return Object.hash(id);
+	};
 }
