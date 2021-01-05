@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+header .undisplay{
+	display:none;
+}
+header #headerlogo img{
+	width:200px;
+}
+header #usernav{
+	flex :1;
+	text-align:right;
+}
+header #header_um_username{
+	color : #333;
+}

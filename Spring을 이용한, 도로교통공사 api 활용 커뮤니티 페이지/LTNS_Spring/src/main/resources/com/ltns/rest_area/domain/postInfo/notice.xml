@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.postInfo.postInfoDAO">
+
+
+	<select id="select_Rows" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+		<![CDATA[
+		SELECT 
+			 notice_id, notice_subject, to_char(notice_regdate ,'yyyy-mm-dd') notice_regdate, notice_writer, notice_content
+		FROM 
+			(SELECT ROWNUM AS RNUM, T.* FROM
+				(SELECT * FROM ADMINNotice ORDER BY notice_id DESC) T)
+		WHERE
+			RNUM >= #{from} AND RNUM < (#{from} + #{pagenationPage})
+		]]>
+	</select>
+
+	<select id="allselect" resultType="int">
+			SELECT count(*) FROM ADMINNotice
+	</select>
+
+	<select id="selectByInts" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+		SELECT 
+		notice_id, notice_subject, to_char(notice_regdate ,'mm-dd') notice_regdate, notice_writer, notice_content
+		 FROM ADMINNOTICE WHERE notice_id = #{id}
+	
+	</select>
+	
+	 
+	<insert id="insertByDTO_Notice"  flushCache="true" >
+	
+			INSERT INTO ADMINNotice (notice_id, notice_subject, notice_regdate, NOTICE_WRITER ,notice_content)
+			values(notice_id_seq.nextval, #{title}, sysdate, #{id}, #{dataSet})
+	</insert>
+
+
+	<select id="FileAllselect" flushCache="true" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+		select * from ADMINNOTICE
+	</select>
+
+
+	<update id="updateByDTOS" flushCache="true">
+	UPDATE ADMINNOTICE SET notice_subject = #{title} WHERE notice_id = #{n_id}
+	</update>
+	
+	
+	<delete id="deleteByInts" flushCache="true">
+	DELETE FROM ADMINNOTICE WHERE NOTICE_ID = #{n_id}
+	</delete>
+	
+	
+	
+	
+</mapper>

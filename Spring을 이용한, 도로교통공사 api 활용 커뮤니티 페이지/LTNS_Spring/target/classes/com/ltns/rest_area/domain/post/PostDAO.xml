@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.post.PostDAO">
+	
+	<select id="selectByInt" parameterType="int" resultType="com.ltns.rest_area.domain.post.PostDTO">
+		SELECT Post.*, a.post_like_cnt 
+		FROM Post LEFT OUTER JOIN(
+				SELECT post_id, COUNT(*) AS post_like_cnt
+				FROM post_like
+				GROUP BY post_id
+			) a ON Post.post_id=a.post_id
+		WHERE 
+			Post.post_id=#{post_id} 
+	</select>
+	
+	<select id="selectByString" parameterType="String" resultType="com.ltns.rest_area.domain.post.PostDTO">
+		SELECT *
+		FROM Post
+		WHERE
+			ra_code=#{ra_code}
+	</select>
+
+	<select id="selectCntByString" parameterType="String" resultType="int">
+		SELECT 
+			count(*) 
+		FROM 
+			Post 
+		WHERE 
+			ra_code=#{ra_code} 
+	</select> 
+	
+	<select id="selectByVO" parameterType="com.ltns.rest_area.domain.post.PostVO" resultType="com.ltns.rest_area.domain.post.PostDTO">
+		SELECT * 
+		FROM( 
+			SELECT ROWNUM rnum, a.* 
+			FROM ( 
+				SELECT 
+					* 
+				FROM 
+					Post
+					<if test="orderBy == 'BY_LIKE'">  
+						LEFT OUTER JOIN (
+							SELECT post_id, COUNT(*) AS post_like_cnt
+							FROM Post_Like
+							GROUP BY post_id
+							) post_like ON Post.post_id=Post_Like.post_id 
+					</if>
+				WHERE 
+					ra_code=#{ra_code} 
+				ORDER BY 
+					<if test="orderBy=='BY_LIKE'"> post_like.post_like_cnt DESC,</if>
+					Post.post_id DESC
+			) a 
+			WHERE ROWNUM <![CDATA[<]]> #{fromRow} + #{numOfRows} 
+		) 
+		WHERE rnum <![CDATA[>]]>= #{fromRow} 
+	</select>
+		
+	<insert id="insertByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.PostVO" >
+		INSERT INTO 
+			Post(post_id, post_title, post_contents, um_uid, um_username, ra_code) 
+		VALUES 
+			(Post_SEQ.NEXTVAL, #{post_title}, #{post_contents}, #{um_uid}, #{um_username}, #{ra_code}) 
+	</insert>
+	
+	<update id="updateByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.PostVO" >
+		UPDATE Post 
+		SET post_contents=#{post_contents} 
+		WHERE post_id=#{post_id}
+	</update>
+
+	<delete id="deleteByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.PostVO">
+		DELETE  
+		FROM Post 
+		WHERE post_id=#{post_id} 
+	</delete>
+
+</mapper>

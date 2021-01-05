@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+
+
+#frontpage .clear-br{
+	clear : both;
+}
+#frontpage nav#search{
+	border : 1px solid black;
+	border-radius : 2%;
+}
+#frontpage #search-top-margin{
+	line-height:90%;
+}
+#frontpage #search-bottom-margin{
+	line-height:50%;
+}
+
+@media (min-width:1200px){
+	#frontpage nav#search{
+		width : 40%;
+	}
+	#frontpage .container-fluid>div{
+		width : 100%;
+	}
+	#frontpage #searchBtn{
+		width : 40%;
+		float : right;
+	}
+}
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.admin.ScheduleDAO">
+	
+	<select id="selectAll"  flushCache="true"  resultType="com.ltns.rest_area.domain.admin.ScheduleDTO">
+			SELECT
+					subject,startdate,enddate,memo
+			FROM 
+					schedule
+	</select>
+	
+	<insert id="insertByDTO"  flushCache="true">
+		INSERT INTO
+			schedule(s_sid, subject, startDate, endDate)
+		VALUES
+			(s_sid_seq.nextval, #{subject}, #{startDate}, #{endDate})
+	</insert>
+	
+	
+	<delete id="deleteByString"   flushCache="true" parameterType="com.ltns.rest_area.domain.admin.ScheduleDTO">
+		Delete from schedule where subject = #{param1}
+	
+	</delete>
+	
+	
+	
+	<update id="updateByDTO" flushCache="true" >
+			UPDATE SCHEDULE SET 
+				subject= #{subject}, startDate=#{startDate}, endDate= #{endDate}
+			WHERE subject= #{add_subject}
+	</update>
+
+</mapper>
+
+
+

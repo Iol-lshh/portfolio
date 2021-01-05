@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+#postboard .undisplay{
+	display : none;
+}
+
+#postboard #post_frmlist>table{
+	width : 100%;
+}
+
+#postboard .right{
+	float : right;
+}
+
+#postboard .clear{
+	clear : both;
+}
+
+/*페이지네이션*/
+#postboard .center{
+	text-align: center;
+}
+
+#postboard ul.pagination {
+	list-style-type: none
+}
+
+#postboard ul.pagination li {
+	display: inline-block;
+}
+
+#postboard ul.pagination a {
+	color: black;
+	float: left;
+	padding: 4px 8px;
+	text-decoration: none;
+	transition: background-color .3s;
+	/* border: 1px solid #ddd; */
+	/* margin: 0 4px; */
+	margin: 0px;
+}
+
+#postboard ul.pagination a.active {
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
+}
+
+#postboard ul.pagination a:hover:not(.active ) {
+	background-color: #ddd;
+}
+
+/**/
+#postboard #postwrite_new,#postboard #postwrite,#postboard #post_content,#postboard .write_post_title,#postboard .write_post_content{
+	width : 100%;
+}
+
+#postboard .write_post_content{
+	height:100px;
+}
+
+#postboard .reported_btn>img{
+	max-height : 15px;
+}
+#postboard .reported_btn{
+	border : none;
+	background-color: transparent;
+}
+
+#postboard #post_pagination a.active{
+	cursor : default;
+	background-color : #dfdfdf;
+}
+
+#postboard #post_pagination a{
+	cursor : pointer;
+	margin : 10px;
+}
+
+#postboard #post_pagination a>img{
+	max-height : 15px;
+}
+
+/*.like_btn*/
+#postboard .like_btn{
+	border : none;
+	background-color: transparent;
+}
+#postboard .like_btn>img{
+	max-height : 15px;
+}
+
+#postboard .like{
+	background-color: #ccccff;
+	border-radius: 100%;
+}

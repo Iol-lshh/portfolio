@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.restarea.RestAreaDAO">
+
+	<select id="selectCnt" resultType="int">
+		SELECT 
+			count(*)
+		FROM
+			RestArea		
+	</select>
+	
+	<select id="selectByString" parameterType="String" resultType="com.ltns.rest_area.domain.restarea.RestAreaDTO">
+		SELECT RestArea.*, a.ra_like_cnt 
+		FROM RestArea LEFT OUTER JOIN(
+				SELECT ra_code, COUNT(*) AS ra_like_cnt
+				FROM ra_like
+				GROUP BY ra_code
+			) a ON RestArea.ra_code=a.ra_code
+		WHERE 
+			RestArea.ra_code=#{ra_code}
+	</select>
+	
+	<select id="selectByObject" parameterType="com.ltns.rest_area.domain.restarea.RestAreaVO" resultType="com.ltns.rest_area.domain.restarea.RestAreaDTO">
+		SELECT
+			<choose>
+				<when test="requestDataKind=='routeName'">ra_routeName</when>
+				<when test="requestDataKind=='destination'">ra_destination</when>
+			</choose>
+		FROM 
+			RestArea
+		<if test="requestDataKind=='destination'">
+		WHERE
+			ra_routeName=#{routeName}
+		GROUP BY ra_destination
+		</if>
+		<if test="requestDataKind=='routeName'">
+		GROUP BY ra_routeName
+		</if>
+	</select>
+
+	
+	<select id="selectByVO" parameterType="com.ltns.rest_area.domain.restarea.RestAreaVO" resultType="com.ltns.rest_area.domain.restarea.RestAreaDTO">
+		SELECT *
+		FROM(
+			SELECT
+				ROWNUM rnum, a.*
+			FROM (
+				SELECT
+					RestArea.*
+				FROM 
+					RestArea
+					<if test="orderBy == 'BY_LIKE'">  
+						LEFT OUTER JOIN (
+							SELECT ra_code, COUNT(*) AS ra_like_cnt
+							FROM ra_like
+							GROUP BY ra_code
+							) ra_like ON restarea.ra_code=ra_like.ra_code 
+					</if>
+				WHERE 
+					ra_routeName=#{routeName}
+					<if test="destination != 'ALL'"> AND ra_destination = #{destination} </if>
+				ORDER BY 
+					<if test="orderBy == 'BY_LIKE'"> ra_like.ra_like_cnt DESC, </if>
+					RestArea.ra_code
+				) a
+			WHERE ROWNUM <![CDATA[<]]> #{fromRow}+#{numOfRows}
+			)
+		WHERE rnum <![CDATA[>]]>= #{fromRow}	
+	</select>
+
+
+	<insert id="insertByDTO" flushCache="true" parameterType="com.ltns.rest_area.domain.restarea.RestAreaDTO">
+		INSERT INTO RestArea
+			(ra_code, ra_name, ra_routeNo, ra_routeName, ra_destination, ra_xValue, ra_yValue)
+		VALUES
+			(#{ra_code}, #{ra_name}, #{ra_routeNo}, #{ra_routeName}, #{ra_destination}, #{ra_xValue}, #{ra_yValue})
+	</insert>
+	
+	
+	<insert id="insertAllByDTOs" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index"  open="INSERT ALL " separator=" " close="SELECT * FROM DUAL" > 
+	        INTO RestArea
+				(ra_code, ra_name, ra_routeNo, ra_routeName, ra_destination, ra_xValue, ra_yValue)
+	        VALUES
+				(#{item.ra_code}, #{item.ra_name}, #{item.ra_routeNo}, #{item.ra_routeName}, #{item.ra_destination}, #{item.ra_xValue}, #{item.ra_yValue})
+        </foreach>
+    </insert>
+
+
+	<delete id="deleteAll" flushCache="true">
+		DELETE FROM RestArea
+	</delete>
+	
+	
+</mapper>

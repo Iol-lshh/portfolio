@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.admin.AreaDataDAO">
+
+	<select id="selectCnt" resultType="int">
+		SELECT count(*) AS CNT FROM RESTAREA  
+	</select>
+	
+	
+	<select id="SelectTotalGas" resultType="int">
+		SELECT count(*) AS CNT FROM  GASSTATION 
+	</select>
+	
+	
+	<select id="SelectTotalMenu" resultType="int">
+		SELECT count(*) AS CNT FROM  FOODMENU 
+	</select>
+	
+	
+	<select id="selectFromGasRow" flushCache="true" resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+	<![CDATA[
+	SELECT  
+	* 
+		FROM 
+				(SELECT ROWNUM AS RNUM, T.* FROM
+				(SELECT * FROM GASSTATION ORDER BY GS_CODE) T)
+		WHERE
+			RNUM >= #{from} AND RNUM < (#{from} + #{pagenationPage})
+	]]>
+	
+	</select>
+	
+	<select id="selectFromMenuRow" flushCache="true" resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+	<![CDATA[
+	SELECT  
+	* 
+		FROM 
+			(SELECT ROWNUM AS RNUM, T.* FROM
+				(SELECT * FROM FOODMENU ) T)
+		WHERE
+			RNUM >= #{from} AND RNUM < (#{from} + #{pagenationPage})
+	]]>
+	
+	</select>
+	
+	
+	<select id="selectFromRow" flushCache="true" resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+	<![CDATA[
+	SELECT  
+	* 
+		FROM 
+			(SELECT ROWNUM AS RNUM, T.* FROM
+				(SELECT * FROM RESTAREA ORDER BY RA_CODE ) T)
+		WHERE
+			RNUM >= #{from} AND RNUM < (#{from} + #{pagenationPage})
+	]]>
+	
+	</select>
+
+
+
+	<select id="SerachFoodMenu" resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+	SELECT * FROM FOODMENU WHERE fm_name LIKE #{foodName}
+	</select>
+
+	<select id="ReastAreaName" resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+		SELECT * FROM RESTAREA WHERE RA_NAME LIKE #{RNAME}
+	</select>
+
+	<select id="GasstionName" resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+		SELECT * FROM GASSTATION WHERE GS_NAME LIKE #{GNAME}
+	</select>
+	
+	
+	<select id="SeachXY" flushCache="true"  resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+			SELECT * FROM RESTAREA WHERE RA_NAME = #{names}
+	</select>
+	
+
+	
+
+</mapper>

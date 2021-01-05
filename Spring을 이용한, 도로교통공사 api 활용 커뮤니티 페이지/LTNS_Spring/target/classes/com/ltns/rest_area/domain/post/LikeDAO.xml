@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.post.LikeDAO">
+	
+	<select id="selectByVO" parameterType="com.ltns.rest_area.domain.post.LikeVO" resultType="String">
+		SELECT 
+			#{um_uid}
+		FROM
+			<choose>
+				<when test="kind=='ra'">ra_like</when>
+				<when test="kind=='gs'">gs_like</when>
+				<when test="kind=='fm'">fm_like</when>
+				<when test="kind=='post'">post_like</when>
+			</choose>
+		WHERE
+			um_uid=#{um_uid} AND
+			<choose>
+				<when test="kind=='ra'">ra_code=#{kind_id}</when>
+				<when test="kind=='gs'">gs_code=#{kind_id}</when>
+				<when test="kind=='fm'">fm_id=#{kind_id}</when>
+				<when test="kind=='post'">post_id=#{kind_id}</when>
+			</choose>
+	</select>
+	
+	<select id="selectCntByVO" parameterType="com.ltns.rest_area.domain.post.LikeVO" resultType="int">
+		SELECT COUNT(*)
+		FROM 
+			<choose>
+				<when test="kind=='ra'">ra_like</when>
+				<when test="kind=='gs'">gs_like</when>
+				<when test="kind=='fm'">fm_like</when>
+				<when test="kind=='post'">post_like</when>
+			</choose>
+		WHERE
+			<choose>
+				<when test="kind=='ra'">ra_code=#{kind_id}</when>
+				<when test="kind=='gs'">gs_code=#{kind_id}</when>
+				<when test="kind=='fm'">fm_id=#{kind_id}</when>
+				<when test="kind=='post'">post_id=#{kind_id}</when>
+			</choose>
+		GROUP BY
+			<choose>
+				<when test="kind=='ra'">ra_code</when>
+				<when test="kind=='gs'">gs_code</when>
+				<when test="kind=='fm'">fm_id</when>
+				<when test="kind=='post'">post_id</when>
+			</choose>
+	</select>
+	
+	<select id="selectCntByObject"  parameterType="com.ltns.rest_area.domain.post.LikeVO" resultType="int">
+		SELECT COUNT(*)
+		FROM 
+			<choose>
+				<when test="kind=='ra'">ra_like</when>
+				<when test="kind=='gs'">gs_like</when>
+				<when test="kind=='fm'">fm_like</when>
+				<when test="kind=='post'">post_like</when>
+			</choose>
+		WHERE
+			<choose>
+				<when test="kind=='ra'">ra_code=#{kind_id}</when>
+				<when test="kind=='gs'">gs_code=#{kind_id}</when>
+				<when test="kind=='fm'">fm_id=#{kind_id}</when>
+				<when test="kind=='post'">post_id=#{kind_id}</when>
+			</choose>
+			AND um_uid=#{um_uid} 
+		GROUP BY
+			<choose>
+				<when test="kind=='ra'">ra_code</when>
+				<when test="kind=='gs'">gs_code</when>
+				<when test="kind=='fm'">fm_id</when>
+				<when test="kind=='post'">post_id</when>
+			</choose>
+	</select>
+	
+	<insert id="insertByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.LikeVO">
+		INSERT INTO 
+			<choose>
+				<when test="kind=='ra'">ra_like(ra_code, </when>
+				<when test="kind=='gs'">gs_like(gs_code, </when>
+				<when test="kind=='fm'">fm_like(fm_id, </when>
+				<when test="kind=='post'">post_like(post_id, </when>
+			</choose>
+			um_uid)
+		VALUES
+			(#{kind_id}, #{um_uid})
+	</insert>
+	
+	<delete id="deleteByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.LikeVO">
+		DELETE
+		FROM 
+			<choose>
+				<when test="kind=='ra'">ra_like</when>
+				<when test="kind=='gs'">gs_like</when>
+				<when test="kind=='fm'">fm_like</when>
+				<when test="kind=='post'">post_like</when>
+			</choose>
+		WHERE
+			um_uid= #{um_uid} AND 
+			<choose>
+				<when test="kind=='ra'">ra_code=#{kind_id}</when>
+				<when test="kind=='gs'">gs_code=#{kind_id}</when>
+				<when test="kind=='fm'">fm_id=#{kind_id}</when>
+				<when test="kind=='post'">post_id=#{kind_id}</when>
+			</choose>
+	</delete>
+</mapper>
