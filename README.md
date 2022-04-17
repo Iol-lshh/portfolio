@@ -27,6 +27,7 @@ Oracle Database AWS EC2 Apache Tomcat Flask Java JavaScript MSSQL(Microsoft SQL 
 
 
 ---
+
 # 경력
 
 ## 천재교과서
@@ -68,7 +69,7 @@ Oracle Database AWS EC2 Apache Tomcat Flask Java JavaScript MSSQL(Microsoft SQL 
 >또한 기존의 업무 쿼리들의 로직을 분석, 개선하였습니다. (커서 제거, 쿼리 프로시저화)   
 
 ---
----
+
 # 기타 프로젝트
 
 ### Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
@@ -107,6 +108,7 @@ Oracle Database AWS EC2 Apache Tomcat Flask Java JavaScript MSSQL(Microsoft SQL 
    
    
 ---
+
 # 스터디
 
 ### 타입스크립트 프로그래밍 스터디
@@ -119,6 +121,7 @@ Oracle Database AWS EC2 Apache Tomcat Flask Java JavaScript MSSQL(Microsoft SQL 
    
    
 ---
+
 # 기타
 >[개인 블로그](https://blog.naver.com/markhong93)   
 
