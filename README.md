@@ -31,8 +31,7 @@ Oracle Database AWS EC2 Apache Tomcat Flask Java JavaScript MSSQL(Microsoft SQL 
 
 ## 천재교과서
 >기간 : 2021.01 ~ (재직중)
----
-백오피스 인 CRM, MGT 및 회원, 물류, SMS 시스템을 운영했습니다. 
+>백오피스 인 CRM, MGT 및 회원, 물류, SMS 시스템을 운영했습니다. 
 
 ### 하드코딩된 예외 권한 처리   
 >기간 : 2022.02 ~ 2022.03 
