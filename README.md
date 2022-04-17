@@ -19,7 +19,7 @@ Oracle Database AWS EC2 Apache Tomcat Flask Java JavaScript MSSQL(Microsoft SQL 
 - OOP에서의 추상화와, 디자인 패턴(GoF)을 항상 고려합니다.
 - 넷플릭스 OSS에 관심이 있습니다(MSA)
 - 인터페이스 구현에 흥미가 높습니다(RestAPI, DB Link, pub/sub, 메시징 큐 등...)
-
+   
 - 가장 중요한 것은 문서작성이라고 생각합니다.
    - 진열된 쓰레기 코드를 방지하고, 분석에 시간을 줄여줘야 합니다.
 - 코드로 돈을 벌고 있는 프로개발자라면, 클린 코드를 위해 항상 고심하고, 공부해야 한다고 생각합니다.
