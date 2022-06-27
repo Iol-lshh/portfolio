@@ -13,14 +13,14 @@ BEGIN TRAN
 		, ho.UserID
 	INTO #todo_change
 	FROM Hand_Over ho WITH(NOLOCK)
-	INNER JOIN [_Temp].DBO.[TBL_인수인계] ho WITH(NOLOCK) ON ho.UserID = ho.UserID
-	ORDER BY ho.userid
+	INNER JOIN [_Temp].DBO.[TBL_인수인계] tmp WITH(NOLOCK) ON tmp.UserID = ho.UserID
+	ORDER BY tmp.userid
 	
 	--1. FinalFlag를 전부 null
 	UPDATE ho
 	SET FinalFlag = NULL
 	FROM Hand_Over ho
-	INNER JOIN [_Temp].DBO.[TBL_인수인계] ho WITH(NOLOCK) ON ho.UserID = ho.UserID
+	INNER JOIN [_Temp].DBO.[TBL_인수인계] tmp WITH(NOLOCK) ON tmp.UserID = ho.UserID
 	
 	--2. last index에 FinalFlag 'Y'
 	UPDATE ho
@@ -56,13 +56,13 @@ BEGIN TRAN
 	--단건 확인
 	SELECT ho.*
 	FROM Hand_Over ho WITH(NOLOCK)
-	INNER JOIN [_Temp].DBO.[TBL_인수인계] ho WITH(NOLOCK) ON ho.UserID = ho.UserID
-	WHERE ho.userid = '???'
+	INNER JOIN [_Temp].DBO.[TBL_인수인계] tmp WITH(NOLOCK) ON tmp.UserID = ho.UserID
+	WHERE tmp.userid = '???'
 	
 	--복수 확인
 	SELECT ho.*
 	FROM Hand_Over ho WITH(NOLOCK)
-	INNER JOIN [_Temp].DBO.[TBL_인수인계] ho WITH(NOLOCK) ON ho.UserID = ho.UserID
-	ORDER BY ho.UserID
+	INNER JOIN [_Temp].DBO.[TBL_인수인계] tmp WITH(NOLOCK) ON tmp.UserID = ho.UserID
+	ORDER BY tmp.UserID
 ROLLBACK
 --COMMIT
