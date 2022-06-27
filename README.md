@@ -88,9 +88,9 @@ Oracle Database, AWS EC2, Apache Tomcat, Flask, Java, JavaScript, MSSQL(Microsof
 # 기타 프로젝트
 
 ### SpringMVC JPA 이용한, 게시글 REST API
->기간 : 2022.06
->SpringBoot + JPA
->[forum_SpringMVC](https://github.com/Iol-lshh/forum_SpringMVC)
+>기간 : 2022.06   
+>SpringBoot + JPA   
+>[forum_SpringMVC](https://github.com/Iol-lshh/forum_SpringMVC)   
 
 
 ### Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
