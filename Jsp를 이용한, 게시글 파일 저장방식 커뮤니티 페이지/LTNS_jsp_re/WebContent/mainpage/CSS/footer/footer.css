@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.footer {
+	background-color: #badada;
+	color: #333;
+	height: 50vh;
+	width:100%;
+}
+
+.footer > ul {
+	list-style: none;
+}
+
+.footer > div > ul > li {
+	background-color: #badada;
+	border: none;
+}
+
+.footer > div{
+	width:100%;
+}

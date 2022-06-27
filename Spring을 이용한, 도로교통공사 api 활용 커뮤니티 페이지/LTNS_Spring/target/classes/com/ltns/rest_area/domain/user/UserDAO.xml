@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.user.UserDAO">
+	<select id="selectAll">
+	select * from usermember;
+	</select>
+	<select id="selectByString" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.UserDTO">
+		select * from usermember where um_username = #{um_username}
+	</select>
+		<select id="selectByObject" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.UserDTO">
+		select * from usermember where um_uid = #{um_uid}
+	</select>
+	<select id="findByNickname" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.UserDTO">
+		select * from usermember where um_nickname = #{um_nickname}
+	</select>
+	<insert id="insertByObject" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+		insert into usermember(um_uid,um_username,um_password,um_nickname) values(SEQ_USERMEMBER_UM_UID.nextval,#{um_username},#{um_password},#{um_nickname})
+	</insert>
+	<update id="updateByObject" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+		update usermember set um_password = #{um_password} where um_username = #{um_username}
+	</update>
+	<update id="updateByDTO" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	update usermember set um_nickname = #{um_nickname} where um_username = #{um_username}
+	</update>
+	<update id="updateAllByUsername">
+	update usermember set um_nickname = #{um_nickname}, um_password = #{um_password}  where um_username = #{um_username}
+	</update>
+	<delete id="deleteByObject" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from usermember where um_username = #{um_username}
+	</delete>	
+	<!--  -->
+	<delete id="deleteByPost_like" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from Post_like where um_uid=#{um_uid}
+	</delete>
+	<delete id="deleteByPOST" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from POST  where um_uid=#{um_uid}
+	</delete>
+	<delete id="deleteByFM_like" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from FM_like where um_uid=#{um_uid}
+	</delete>
+	<delete id="deleteByGS_like" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from GS_like where um_uid=#{um_uid}
+	</delete>
+	<delete id="deleteByRA_like" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from RA_like where um_uid=#{um_uid}
+	</delete>
+	<delete id="deleteByComments" parameterType="com.ltns.rest_area.domain.user.UserDTO" flushCache="true">
+	delete from Comments where um_uid=#{um_uid}
+	</delete>
+	<select id="findByRA_like_All" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select  um_uid "uid", ra_code strLike from RA_like where um_uid= #{um_uid}
+	</select>
+	<select id="findByGS_like_All" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select  um_uid "uid", gs_code strLike from gs_like where um_uid = #{um_uid} 
+	</select>
+	<select id="findByFM_like_All" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select um_uid "uid", fm_id strLike from FM_like where um_uid = #{um_uid}
+	</select>
+	<select id="findByPost_like_All" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select um_uid "uid", post_id numLike from post_like where um_uid = #{um_uid}
+	</select>
+	<select id="findByPost_All" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.post.PostDTO">
+	select * from post where um_uid = #{um_uid} order by post_regdate desc
+	</select>
+	<select id="findByComment_All" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.post.CommentDTO">
+	select * from comments where um_uid = #{um_uid} order by comment_id desc
+	</select>
+	<select id="findByPost" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.post.PostDTO">
+	select * from(select rownum "row",post_id,post_title,post_contents,um_uid,um_username,post_regdate, ra_code,post_reported  from post where um_uid = #{user.um_uid} order by post_regdate desc)where "row" <![CDATA[>=]]> #{from}  and "row" <![CDATA[<=]]> #{to}
+	</select>
+	<select id="findByComments" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.post.CommentDTO">
+	select * from(select rownum "row", comment_id, comment_contents,um_uid, um_username, post_id,comment_reported  from comments where um_uid = #{user.um_uid})where "row" <![CDATA[>=]]> #{from}  and "row" <![CDATA[<=]]> #{to}
+	</select>	
+	<select id="findByRA_like" resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select * from(select rownum "row",   um_uid "uid", ra_code strLike from RA_like where um_uid= #{user.um_uid})where "row" <![CDATA[>=]]> #{from}  and "row" <![CDATA[<=]]> #{to}
+	</select>
+	<select id="findByGS_like"  resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select * from(select rownum "row", um_uid "uid", gs_code strLike from gs_like where um_uid = #{user.um_uid})where "row" <![CDATA[>=]]> #{from}  and "row" <![CDATA[<=]]> #{to}
+	</select>
+	<select id="findByFM_like"  resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select * from(select rownum "row",  um_uid "uid", fm_id strLike from FM_like where um_uid = #{user.um_uid})where "row" <![CDATA[>=]]> #{from}  and "row" <![CDATA[<=]]> #{to}
+	</select>
+	<select id="findByPost_like"  resultType="com.ltns.rest_area.domain.user.LikeDTO">
+	select * from(select rownum "row",  um_uid "uid", post_id numLike from post_like where um_uid = #{user.um_uid})where "row" <![CDATA[>=]]> #{from}  and "row" <![CDATA[<=]]> #{to}
+	</select>
+	 <select id="findByRestArea" parameterType="com.ltns.rest_area.domain.user.LikeDTO" resultType="com.ltns.rest_area.domain.restarea.RestAreaDTO">
+	select * from RestArea where ra_code = #{strLike} order by ra_name asc
+	</select>
+	<select id="findByGasStation" parameterType="com.ltns.rest_area.domain.user.LikeDTO" resultType="com.ltns.rest_area.domain.restarea.GasStationDTO">
+	select * from GasStation where gs_code = #{strLike} order by gs_name asc
+	</select>
+	<select id="findByFoodMenu" parameterType="com.ltns.rest_area.domain.user.LikeDTO" resultType="com.ltns.rest_area.domain.restarea.FoodMenuDTO">
+	select * from FoodMenu where fm_id = #{strLike} order by fm_name asc
+	</select>
+	<select id="findByLikePost" parameterType="com.ltns.rest_area.domain.user.UserDTO" resultType="com.ltns.rest_area.domain.post.PostDTO">
+	select * from post where post_id = #{numLike} order by post_regdate desc
+	</select>
+	 	<delete id="deleteStrLike" flushCache="true">
+		delete from ${table}
+		where um_uid = ${uid} and ${column} in
+			<foreach collection="strCode" item="item" index="index" open="(" close=")" separator=",">
+				#{item}
+	</foreach>	
+	</delete>
+		 	<delete id="deleteNumLike" flushCache="true">
+		delete from ${table}
+		where um_uid = ${uid} and ${column} in
+			<foreach collection="numCode" item="item" index="index" open="(" close=")" separator=",">
+				${item}
+		</foreach>
+		
+	</delete>
+</mapper>

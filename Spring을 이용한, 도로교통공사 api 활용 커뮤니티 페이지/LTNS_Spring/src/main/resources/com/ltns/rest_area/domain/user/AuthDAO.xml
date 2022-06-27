@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.user.AuthDAO">
+    <insert id="insertByObject" flushCache="true" parameterType="long">
+     insert into auth(um_uid) values (#{uid})
+    </insert>
+    
+    <insert id="insertByDTO" parameterType="com.ltns.rest_area.domain.user.UserAuthDTO" flushCache="true">
+     insert into auth values (#{addAuthority},#{uid})
+    </insert>
+    
+    <delete id="deleteByObject" flushCache="true" parameterType="long">
+        delete from auth where um_uid = #{uid}
+    </delete>
+   
+    <delete id="deleteByUserAuth">
+    delete from auth where um_uid=#{uid} and authority=#{authority}
+    </delete>
+   
+    <select id="selectByObject" parameterType="long" resultType="com.ltns.rest_area.domain.user.AuthDTO">
+    select * from auth where um_uid=#{uid}
+    </select>
+   
+    <select id="selectByString" parameterType="string" resultType="com.ltns.rest_area.domain.user.UserAuthDTO">
+    select u.um_uid "uid", u.um_username username, u.um_enabled enabled, u.um_nickname nickname, a.authority, u.um_password password, u.um_regdate regdate from usermember u join auth a on u.um_uid = a.um_uid where um_username=#{s}
+    </select>
+   
+    <select id="selectAll" resultType="com.ltns.rest_area.domain.user.UserAuthDTO">
+    select u.um_uid "uid", u.um_username username, u.um_enabled enabled, u.um_nickname nickname, a.authority, u.um_password password, u.um_regdate regdate from usermember u join auth a on u.um_uid = a.um_uid
+    </select>
+   
+    <update id="updateByObject" parameterType="com.ltns.rest_area.domain.user.UserAuthDTO" flushCache="true">
+     update auth set authority = #{nextAuthority} where um_uid = #{uid} AND authority = #{prevAuthority}
+    </update>
+
+</mapper>

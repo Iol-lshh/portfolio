@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+a.sm_card_list {
+	display : block;
+	padding:6.2px;
+    border-top: 1px solid #e3e3e3;
+}
+
+a.sm_card_list p, a.sm_card_list time{
+	display:inline-block;
+}
+
+div.sm_card_list-metadata{
+	float:right;
+}
+
+p.sm_card_list-title{
+	width : 60%;
+	font-size:13px;
+	height: 17px;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #4c4c4c;
+    font-size: 14px;
+}
+
+p.sm_card_list-writer{
+	font-size:10px;
+	margin-right: 10px;
+	color:#a6a6a6;
+}
+
+time.sm_card_list-regdate{
+	font-size:10px;
+	color:#a6a6a6;
+}

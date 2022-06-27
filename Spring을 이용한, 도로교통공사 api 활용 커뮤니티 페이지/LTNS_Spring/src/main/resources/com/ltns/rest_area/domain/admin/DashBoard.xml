@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.admin.DashBoardDAO">
+
+
+	<select id="selectCnt"  resultType="int">
+	 SELECT count(*) AS total_acount  FROM USERMEMBER 
+	</select>
+
+	<select id="selectCnts" resultType="int">
+	<![CDATA[
+	SELECT count(*) AS today_acount FROM USERMEMBER
+	WHERE TO_CHAR(UM_REGDATE ,'YYYYMMDD') = TO_CHAR(SYSDATE ,'YYYYMMDD')
+	]]>
+	</select>
+	
+	<select id="select_totalPost"  resultType="int">
+	SELECT count(*) AS total_post  FROM POST
+	</select>
+
+	<select id="select_todayPost" resultType="int">
+	<![CDATA[
+	SELECT count(*) AS today_post FROM post
+	WHERE TO_CHAR(POST_REGDATE ,'YYYYMMDD') = TO_CHAR(SYSDATE ,'YYYYMMDD')
+	]]>
+	</select>
+	
+	
+	
+	<select id="chipGas"  resultType="com.ltns.rest_area.domain.admin.AreaDataDTO">
+	<![CDATA[
+	SELECT GS_NAME, GS_DIESEL , GS_GASOLINE, GS_LPG FROM 
+		(SELECT * FROM GASSTATION ORDER BY GS_DIESEL ,GS_GASOLINE DESC)
+		WHERE ROWNUM <=5	
+	]]>
+				
+	</select>
+
+
+
+
+	
+	
+	<select id="select_todayReports_post" resultType="int">
+	SELECT count(*) AS POST_REPORTED FROM post
+	WHERE TO_CHAR(POST_REGDATE ,'YYYYMMDD') = TO_CHAR(SYSDATE ,'YYYYMMDD')
+	</select>
+	
+	
+
+	<select id="selectAll" flushCache="true" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+	<![CDATA[
+		SELECT post_id, POST_TITLE, UM_USERNAME, RA_CODE, post_reported  FROM post
+		WHERE TO_CHAR(POST_REGDATE ,'YYYYMMDD') = TO_CHAR(SYSDATE ,'YYYYMMDD')
+		AND POST_REPORTED  >=10
+	]]>
+	</select>
+
+
+
+	<select id="bestArea" flushCache="true" resultType="com.ltns.rest_area.domain.admin.DashBoardDTO" >
+	SELECT ase.RA_CODE, rs.RA_NAME, count(*) AS BEST_RA
+	FROM RA_LIKE ase , RESTAREA rs
+	WHERE ase.RA_CODE  = rs.RA_CODE
+	GROUP BY ase.RA_CODE, rs.RA_NAME
+	ORDER BY BEST_RA desc
+	</select>
+	
+	<select id="bestFood" flushCache="true" resultType="com.ltns.rest_area.domain.admin.DashBoardDTO">
+	SELECT fk.FM_ID , fm.FM_NAME, count(*) AS BEST_RA, fm.FM_PRICE,
+	r.RA_NAME 
+	FROM FM_LIKE fk , FOODMENU fm , RESTAREA r 
+	WHERE fk.FM_ID  = fm.FM_ID and fm.RA_CODE = r.RA_CODE
+	GROUP BY fk.FM_ID, fm.FM_NAME,  fm.FM_PRICE, r.RA_NAME 
+	ORDER BY BEST_RA desc
+	</select>
+	
+	<select id="bestGas" flushCache="true" resultType="com.ltns.rest_area.domain.admin.DashBoardDTO">
+	
+	SELECT gk.GS_CODE , g.GS_NAME , g.GS_DIESEL, g.GS_GASOLINE ,g.GS_LPG  , count(*) AS BEST_RA
+	FROM GS_LIKE gk , GASSTATION g 
+	WHERE gk.GS_CODE  = g.GS_CODE 
+	GROUP BY gk.GS_CODE , g.GS_NAME , g.GS_DIESEL, g.GS_GASOLINE ,g.GS_LPG 
+	ORDER BY BEST_RA desc
+	
+	
+	</select>
+	
+	<select id="totalLike" flushCache="true" resultType="com.ltns.rest_area.domain.admin.DashBoardDTO">
+	<![CDATA[
+		SELECT
+		( SELECT count(*) FROM FM_LIKE )AS FMLIKE,
+		( SELECT count(*) FROM GS_LIKE )AS GSLIKE,
+		( SELECT count(*) FROM RA_LIKE )AS RALIKE
+		FROM dual 
+	]]>
+	</select>
+	
+	
+	<select id="monthPostChart" flushCache="true" resultType="com.ltns.rest_area.domain.admin.DashBoardDTO">
+		<![CDATA[
+		SELECT TO_CHAR(POST_REGDATE ,'MM-DD') as membersdays, count(*) month_total  FROM post
+		WHERE  POST_REGDATE BETWEEN to_date((TRUNC(sysdate,'MM')))  AND   to_date(LAST_DAY(sysdate)) 
+		GROUP BY TO_CHAR(POST_REGDATE ,'MM-DD') 
+		ORDER BY TO_CHAR(POST_REGDATE ,'MM-DD')	
+		]]>
+	</select>
+	
+	<select id="memberListChart" flushCache="true" resultType="com.ltns.rest_area.domain.admin.DashBoardDTO">
+	<![CDATA[
+		SELECT TO_CHAR(UM_REGDATE ,'MM-DD') as addAcount, count(*) addAcountTotal  FROM USERMEMBER  
+		WHERE  UM_REGDATE BETWEEN to_date((TRUNC(sysdate,'MM')))  AND   to_date(LAST_DAY(sysdate)) 
+		GROUP BY TO_CHAR(UM_REGDATE ,'MM-DD') 
+		ORDER BY TO_CHAR(UM_REGDATE ,'MM-DD')
+	]]>
+	</select>
+	
+	
+	<select id="select_todayNotice" flushCache="true" resultType="int">
+	SELECT count(*) count  FROM ADMINNOTICE a 
+	WHERE to_char(NOTICE_REGDATE,'yyyy-mm-dd')  = to_char(sysdate,'yyyy-mm-dd')  
+	</select>
+
+</mapper>
+ 

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "alert-flames-297912",
+  "private_key_id": "a23cac2732c4bcafab73c98141f7a5e1ff5db58d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDSQhUcmeXnxz+d\nXMLo2tJRXVhI9D7IoFbIWrdl18ANyMBZ06ZKjnHC9gE2wBWV94yiQb7X+ABaVKEs\nC2INKHPUjKCUxNGqvyM0aijPPyjCgYj3Ceg/Q4JA9o4jpPKlTNx4NYjJ/oVwOGKU\nMV8uAymSRVEJWcX2vVs+SqwNQDab3zTFlVi4+pbPjDCseql1uwJqM5h2JHUksZfK\ndAKZYYCrMw7nH0JUeZjepBY6ZBSi/pxX7QCyAI+jhFmhfHcalYapXAJ9JN6B2Wu8\npncmFSlCc71WbwFg/cpF4VE6l07GOPZmLNmT8RLM3zv5CjMUJe3IU4hmAvkGc3+X\nl6CmxvhfAgMBAAECggEABUKI86u38CnwYffpmlirDUUICd8uWOeF9EIst1wD3nRo\nt3aPgOr6VpW/5wY8JAHK315Er3NxUtEuLQNl4w1hhG42MDKSSjK45z1GoxSh6OfD\nrOZvDHIcZpKkcKjWNyNqmolAUElRPkLy2GE5z9Vda17XjaPUy3zmNPM6RaSXGSQb\nOjM/9N96MaSL0VtlVw6O//1CQAyiOKLG0m5y6HUMH70xRTmF4VME7wqYUMZDjbAM\nBnda7/7qzeVYp+/eq+RitkzFsNEu3D4kfr1dcbpZ3/b7zlPja+1J/ZWfyVfYotsb\n3NzjfYEVRYmmfTAFko9erCYyOWViYfWn9mU+o6Yn7QKBgQDsVinYylqkrYgXKiD7\n81kQL7k0wR4Zo+NGGlN/cNGzqguhurno2Z3eJW7U8fpbXqzuXFyJ8n6lJaQD4nP5\nQ1vRw6WcxJe3sjN/rMMe1FKhWJ2YuBaNH2l9T68Oz0iTwXFSrEHRampPEJMa3TN0\nN4BnPRIGf5aNo/eU++89PKrvowKBgQDjwHZ7xm2AIM60Q5/pjfQC2bSsHEFCjlAV\nEjjRZt7gKmetwJwj3i6uJPGWovb73s8b6CSVJD5qF2vrre5l/Nj1WzbUBgTjIj+c\nIlXFS0/ThDVFcECaYmo7fkJI04OCxlyRYjQNfOWAawk3indM3PfHG2X8saEnLHOn\nJTB2ow5wFQKBgQC7Vg1zv+sb8EYY/pcIwDvP/dRUQeRHNMbZ8dJQCbDgNqFjwKzP\nK3jc91UkTO9D8AcqJmJgIq1K4Uxim+WMJ12oJ+qmGpuczA/QW7SLQoiBRsodnYaa\ntNSctUYxehOws7zNaKf/hNfh9mR0/fRkYf5RV3JrXkWL3vZIzW81Xlqs+wKBgQCy\nJbbIJLM8WO02xfrM1pO6sw4G3mcRp33urX0yFrRZRfIpUBMSX1XGM/GhMcHdzC/W\nlWQgIOSNWdq51Cg5MGmIqhueB0NFY2G8QIM0uy8qtSxyL1bpK/gKpz0z9/bTkVOR\nCO7MahietZrVDgM5ZVKPNNg2q77xhGzGnmllMzA07QKBgQDKfjbIqDhTh9STIkXv\n96Ztzm5wDpB82aYggHpeanWhwp31d2TbD80WnScgMGs2dcYXVkfgO6KsNLNUWQ49\nSV8Od7V8PydZdoEG3PpxZL0oyHSGAqcq1g+WSfb867rQUNscSM0zLo0vStF0/mfm\nI2ZgrjPYmXD2QZ/VOeHY5lv8iQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "calendar@alert-flames-297912.iam.gserviceaccount.com",
+  "client_id": "102166589036739030150",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/calendar%40alert-flames-297912.iam.gserviceaccount.com"
+}

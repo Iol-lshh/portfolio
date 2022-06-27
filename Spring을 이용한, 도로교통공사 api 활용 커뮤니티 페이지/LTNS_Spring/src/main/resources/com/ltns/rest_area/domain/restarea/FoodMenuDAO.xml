@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.restarea.FoodMenuDAO">
+	
+	<select id="selectCnt" resultType="int">
+		SELECT 
+			count(*)
+		FROM
+			FoodMenu		
+	</select>
+	
+	<select id="selectByString" parameterType="String" resultType="com.ltns.rest_area.domain.restarea.FoodMenuDTO">
+		SELECT FoodMenu.*, a.fm_like_cnt
+		FROM FoodMenu LEFT OUTER JOIN(
+				SELECT fm_id, COUNT(*) AS fm_like_cnt
+				FROM fm_like
+				GROUP BY fm_id
+			)  a ON FoodMenu.fm_id=a.fm_id
+		WHERE 
+			FoodMenu.ra_code=#{ra_code}
+	</select>
+	
+	<select id="selectByVO" parameterType="com.ltns.rest_area.domain.restarea.RestAreaVO" resultType="com.ltns.rest_area.domain.restarea.FoodMenuDTO">
+		SELECT *
+		FROM(
+			SELECT ROWNUM rnum, a.*
+			FROM(
+				SELECT
+					fm.*, ra.ra_routeName, ra.ra_destination
+				FROM
+					FoodMenu fm
+					LEFT OUTER JOIN
+						RestArea ra ON fm.ra_code=ra.ra_code
+				<if test="orderBy == 'BY_LIKE'">  
+					LEFT OUTER JOIN (
+						SELECT fm_id, COUNT(*) AS fm_like_cnt
+						FROM fm_like
+						GROUP BY fm_id
+						) fm_like ON fm.fm_id=fm_like.fm_id
+				</if>
+				WHERE 
+					ra.ra_routeName=#{routeName}
+					<if test="destination != 'ALL'"> AND ra.ra_destination = #{destination} </if>
+				ORDER BY
+					<if test="orderBy == 'BY_LIKE'"> fm_like.fm_like_cnt DESC, </if>
+					<if test="orderBy == 'BY_PRICE'"> fm.fm_price,</if>
+					fm.ra_code,fm.fm_id
+			) a
+			WHERE ROWNUM <![CDATA[<]]> #{fromRow}+#{numOfRows}
+		)
+		WHERE rnum <![CDATA[>]]>= #{fromRow}	
+	</select>
+	
+	
+	<insert id="insertByDTO" flushCache="true"  parameterType="com.ltns.rest_area.domain.restarea.FoodMenuDTO">
+		INSERT INTO FoodMenu
+			( fm_id, fm_code, ra_code, fm_name, fm_price, fm_material, fm_etc)
+		VALUES
+			( #{fm_id}, #{fm_code}, #{ra_code}, #{fm_name}, #{fm_price}, #{fm_material}, #{fm_etc})
+	</insert>
+	
+	
+	<insert id="insertAllByDTOs" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index"  open="INSERT ALL " separator=" " close="SELECT * FROM DUAL" > 
+	        INTO FoodMenu
+			( fm_id, fm_code, ra_code, ra_name, fm_name, fm_price, fm_material, fm_etc)
+		VALUES
+			( #{item.fm_id}, #{item.fm_code}, #{item.ra_code}, #{item.ra_name}, #{item.fm_name}, #{item.fm_price}, #{item.fm_material}, #{item.fm_etc})
+		</foreach>
+    </insert>
+	
+	<delete id="deleteAll" flushCache="true">
+		DELETE FROM FoodMenu
+	</delete>
+</mapper>

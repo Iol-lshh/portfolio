@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container {
+	max-width: 50%;
+}
+
+.fas {
+	font-size: 300px;
+}

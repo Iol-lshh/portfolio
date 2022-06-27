@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="data"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:xe" p:username="ltns2"
+		p:password="ltns2" />
+	<bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate"
+		p:dataSource-ref="data" />
+	<bean id="loginFailureHandler"
+		class="com.ltns.rest_area.security.handler.LoginFailureHandler" />
+	<bean id="securityDeniedHandler"
+		class="com.ltns.rest_area.security.handler.SecurityDeniedHandler" />
+	<bean name="loginSuccessHandler"
+		class="com.ltns.rest_area.security.handler.LoginSuccessHandler"
+		p:jdbc-ref="jdbc" />
+	<bean id="bCryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="ltnsreport@gmail.com" />
+		<property name="password" value="!admin123" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.auth">true</prop>
+			</props>
+		</property>
+	</bean>
+	<security:http>
+		<security:intercept-url pattern="/auth/**"
+			access="permitAll" />
+		<security:intercept-url pattern="/member/**"
+			access="hasRole('ROLE_MEMBER')" />
+		<security:intercept-url pattern="/admin/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:form-login login-page="/auth/user/login"
+			login-processing-url="/loginProcess"
+			authentication-success-handler-ref="loginSuccessHandler"
+			authentication-failure-handler-ref="loginFailureHandler" />
+		<security:logout logout-url="/logoutProcess"
+			logout-success-url="/rest_area/front" invalidate-session="true" />
+		<security:access-denied-handler
+			ref="securityDeniedHandler" />
+	</security:http>
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:password-encoder
+				ref="bCryptPasswordEncoder" />
+			<security:jdbc-user-service
+				data-source-ref="data"
+				users-by-username-query="select um_username username,um_password password, um_enabled enabled from usermember where um_username = ?"
+				authorities-by-username-query="select u.um_username username, a.authority from usermember u, auth a where a.um_uid = u.um_uid and u.um_username = ?" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>

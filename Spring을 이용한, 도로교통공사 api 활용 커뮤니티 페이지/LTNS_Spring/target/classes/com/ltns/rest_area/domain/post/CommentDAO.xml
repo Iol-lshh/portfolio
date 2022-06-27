@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.post.CommentDAO">
+
+	<select id="selectByVO" parameterType="com.ltns.rest_area.domain.post.CommentVO" resultType="com.ltns.rest_area.domain.post.CommentDTO">
+		SELECT *
+		FROM (
+			SELECT ROWNUM rnum, *
+			FROM (
+				SELECT *
+				FROM Comments
+				WHERE post_id=#{post_id}
+				ORDER BY comment_id DESC
+			)
+			WHERE ROWNUM <![CDATA[<]]> #{fromRow} + #{numOfRows}
+		)
+		WHERE rnum <![CDATA[>]]>= #{fromRow}
+	</select>
+
+	<insert id="insertByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.CommentVO">
+		INSERT INTO 
+			Comment(comment_id,comment_contents, um_uid, um_username, um_regdate, post_id, comment_reported) 
+		VALUES 
+			(#{comment_id},#{comment_contents}, #{um_uid}, #{um_username}, #{um_regdate}, #{post_id}, #{comment_reported}) 
+	</insert>
+	
+	<update id="updateByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.CommentVO">
+		UPDATE Comment 
+		SET comment_contents=#{comment_contents} 
+		<if test="comment_reported!==''"> ,comment_reported=#{comment_reported} </if>
+		WHERE comment_id=#{comment_id}
+	</update>
+	
+	<delete id="deleteByVO" flushCache="true" parameterType="com.ltns.rest_area.domain.post.CommentVO">
+		DELETE 
+		FROM Comment 
+		WHERE comment_id=#{comment_id} 
+	</delete>
+	
+</mapper>

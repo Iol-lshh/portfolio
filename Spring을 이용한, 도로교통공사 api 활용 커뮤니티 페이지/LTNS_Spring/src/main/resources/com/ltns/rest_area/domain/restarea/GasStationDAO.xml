@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.domain.restarea.GasStationDAO">
+
+	<select id="selectCnt" resultType="int">
+		SELECT 
+			count(*)
+		FROM
+			GasStation		
+	</select>
+	
+	<select id="selectByString" parameterType="String" resultType="com.ltns.rest_area.domain.restarea.GasStationDTO">
+		SELECT GasStation.*, a.gs_like_cnt
+		FROM GasStation LEFT OUTER JOIN(
+				SELECT gs_code, COUNT(*) AS gs_like_cnt
+				FROM gs_like
+				GROUP BY gs_code
+			)  a ON GasStation.gs_code=a.gs_code
+		WHERE 
+			GasStation.ra_code=#{ra_code}
+	</select>
+	
+	<select id="selectByVO" parameterType="com.ltns.rest_area.domain.restarea.RestAreaVO" resultType="com.ltns.rest_area.domain.restarea.GasStationDTO">
+		SELECT *
+		FROM(
+			SELECT ROWNUM rnum, a.*
+			FROM(
+				SELECT
+					gs.*, ra.ra_routeName, ra.ra_destination
+				FROM
+					GasStation gs
+					LEFT OUTER JOIN
+						RestArea ra ON gs.ra_code=ra.ra_code
+				<if test="orderBy == 'BY_LIKE'">  
+					LEFT OUTER JOIN (
+						SELECT gs_code, COUNT(*) AS gs_like_cnt
+						FROM gs_like
+						GROUP BY gs_code
+						) gs_like ON gs.gs_code=gs_like.gs_code 
+				</if>
+				WHERE 
+					ra.ra_routeName=#{routeName}
+					<if test="destination != 'ALL'"> AND ra.ra_destination = #{destination} </if>
+				ORDER BY
+					<if test="orderBy == 'BY_LIKE'"> gs_like.gs_like_cnt DESC, </if>
+					<if test="orderBy == 'BY_DIESEL'"> gs.gs_diesel,</if>
+					<if test="orderBy == 'BY_GASOLINE'"> gs.gs_gasoline,</if>
+					<if test="orderBy == 'BY_LPG'"> gs.gs_lpg,</if>
+					gs.ra_code
+			) a
+			WHERE ROWNUM <![CDATA[<]]> #{fromRow}+#{numOfRows}
+		)
+		WHERE rnum <![CDATA[>]]>= #{fromRow}	
+	</select>
+
+
+	<insert id="insertByDTO" flushCache="true"  parameterType="com.ltns.rest_area.domain.restarea.GasStationDTO">
+		INSERT INTO GasStation
+			( gs_code, gs_name, ra_code, gs_company, gs_diesel, gs_gasoline, gs_lpg )
+		VALUES
+			( #{gs_code}, #{gs_name}, #{ra_code}, #{ra_name}, #{gs_company}, #{gs_diesel}, #{gs_gasoline}, #{gs_lpg} )
+	</insert>
+
+
+	<insert id="insertAllByDTOs" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index"  open="INSERT ALL " separator=" " close="SELECT * FROM DUAL" > 
+	        INTO GasStation
+				( gs_code, gs_name, ra_code, ra_name, gs_company, gs_diesel, gs_gasoline, gs_lpg ) 
+	       VALUES 
+			( #{item.gs_code}, #{item.gs_name}, #{item.ra_code}, #{item.ra_name}, #{item.gs_company}, #{item.gs_diesel}, #{item.gs_gasoline}, #{item.gs_lpg} )
+		</foreach>
+    </insert>
+
+
+	<delete id="deleteAll" flushCache="true">
+		DELETE FROM GasStation
+	</delete>
+</mapper>

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction :column;	
+}
+
+.body {
+	flex: 1;
+	display: flex;
+	flex-direction :column;
+	justify-content: center;
+	align-items: center;
+}
+
+.center {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul.pagination {
+	list-style-type: none
+}
+
+ul.pagination li {
+	display: inline-block;
+	cursor: pointer;
+}
+
+ul.pagination a {
+	color: black;
+	float: left;
+	padding: 4px 8px;
+	text-decoration: none;
+	transition: background-color .3s;
+	margin: 0px;
+}
+
+ul.pagination a.active {
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
+}
+
+ul.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ltns.rest_area.postInfo.postInfoDAO">
+
+
+
+
+	<select id="selectFromRow" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+		<![CDATA[
+		SELECT 
+			 post_id, post_title, POST_CONTENTS, UM_UID, UM_USERNAME, POST_REGDATE, RA_CODE, POST_REPORTED
+		FROM 
+			(SELECT ROWNUM AS RNUM, T.* FROM
+				(SELECT * FROM POST ORDER BY post_id DESC) T)
+		WHERE
+			RNUM >= #{from} AND RNUM < (#{from} + #{pagenationPage})
+		]]>
+	</select>
+
+
+	<select id="selectCnt" resultType="int">
+			SELECT count(*) FROM POST
+	</select>
+
+
+
+	
+	<select id="selectAll" flushCache="true" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+		<![CDATA[
+		SELECT ROWNUM, POST_ID, POST_TITLE , POST_REPORTED, UM_USERNAME  FROM 
+		(SELECT * FROM POST ORDER BY POST_ID, POST_REPORTED  DESC)
+		WHERE ROWNUM <=5
+		]]>
+	</select>
+
+
+
+	<delete id="deleteByUid" flushCache="true" parameterType="java.util.ArrayList">
+		DELETE FROM POST 
+			WHERE post_id in (
+			
+				<foreach collection="array" index="index" item="item" separator=",">
+					${item}
+				</foreach>
+			)
+	</delete>
+
+
+
+	<select id="selectByString" flushCache="true" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+		SELECT * FROM POST  WHERE POST_TITLE = #{title} or UM_USERNAME = #{nickname} 
+	</select>
+
+
+	<select id="selectAlls" flushCache="true" resultType="com.ltns.rest_area.postInfo.postInfoDTO"> 
+	<![CDATA[
+		SELECT RA_CODE, COUNT(*) AS ACCOUNT 
+		FROM POST
+		GROUP BY RA_CODE
+		]]>
+	</select>
+	
+	<!-- 월요일 기준 7일  통계 -->
+	<select id="Allselect" flushCache="true" resultType="com.ltns.rest_area.postInfo.postInfoDTO">
+	<![CDATA[
+		SELECT TO_CHAR(POST_REGDATE ,'MM-DD') days , nvl(count(*) ,0) dayscount  FROM POST
+		WHERE POST_REGDATE BETWEEN to_char(trunc(sysdate, 'iw')-7) and to_char(trunc(sysdate, 'iw'))
+		GROUP BY TO_CHAR(POST_REGDATE ,'MM-DD')
+		order by days
+	]]>
+	
+	</select>
+
+
+
+	<update id="updateReport" flushCache="true">
+		UPDATE POST SET POST_REPORTED = POST_REPORTED + 1 WHERE POST_ID = #{POST_ID}
+	</update> 
+
+	
+	
+
+
+
+</mapper>

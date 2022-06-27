@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.undisplay{
+	display : none;
+}
+
+#search .container-fluid>div{
+	width:100%;
+}
+
+#search .navnav1,#search .navnav2,#search .navnav3{
+	display : inline-block;
+}
+
+
+.right{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+
+#list_searchBtn{
+	height:50px;
+	width:120px;
+}
+
+#searchResultList a h5, #searchResultList a p{
+	color : #555;
+}
