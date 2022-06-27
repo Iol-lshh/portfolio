@@ -12,7 +12,7 @@
 - Spring MVC 서블릿 기반 WAS
 - Flask, NodeJS 이벤트 루프 기반 WAS
 - Vue(하), React(하)
-- [MSSQL(중)](https://github.com/Iol-lshh/portfolio/tree/main/MSSQL)
+- [MSSQL(중)](https://github.com/Iol-lshh/portfolio/blob/main/MSSQL/%EC%9D%B8%EC%88%98%EC%9D%B8%EA%B3%84%20%EB%B3%B4%EC%A0%95.sql)
 - 다른 영속성 시스템도 실행계획을 보며, 자유롭게 쿼리 작성 가능할 정도로 사용가능합니다.
 - EC2, ELB, ES3, Lambda 등의 AWS 서비스 경험(하)
 
