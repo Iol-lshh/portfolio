@@ -174,14 +174,16 @@ Oracle Database, AWS EC2, Apache Tomcat, Flask, Java, JavaScript, MSSQL(Microsof
 # 세부 todo
 - 서비스에서, NoSQL을 활용한, 읽기/쓰기의 책임 분리 패턴 구현
 
-- 스프링 클라우드 컨피그,
-- 서비스 레지스트리(유레카),
-- 서킷브레이커(Hystrix)
-- 비동기 메시징(jms/RabbitMQ/Kfka)을 이용한 스프링 클라우드 구현 *실습*
+- 스프링 클라우드 구현 *실습*
+	- 스프링 클라우드 컨피그,
+	- 서비스 레지스트리(유레카),
+	- 서킷브레이커(Hystrix)
+	- 비동기 메시징(jms/RabbitMQ/Kfka)
 
-- 액추에이터
-- 스프링 부트 admin
-- JMX를 이용한 스프링 프로젝트 모니터링 적용 *실습*
+- 스프링 프로젝트 모니터링 적용 *실습*
+	- 액추에이터
+	- 스프링 부트 Admin
+	- JMX
 
 - 도커와 AWS, 스프링클라우드를 이용한 자가수복과 오토스케일링 패턴 세부 *공부*(by IaC)
 
