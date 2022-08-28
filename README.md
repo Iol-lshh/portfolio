@@ -22,7 +22,7 @@
 - Git(하)
 - Docker(하)
 
-Oracle Database, AWS EC2, Apache Tomcat, Flask, Java, JavaScript, MSSQL(Microsoft SQL Server), Python, Spring, Google Dialogflow, ASP.NET, JSP, MyBatis, NginX, RabbitMQ
+Oracle Database, AWS EC2, Apache Tomcat, Flask, Java, JavaScript, MSSQL(Microsoft SQL Server), Python, Spring, Google Dialogflow, ASP.NET, JSP, MyBatis, RabbitMQ
 
 ## 제가 생각하는 상중하
 - 상 : 실제 물리적 작동 및 엔진을 완벽히 파악하고 있으며, 튜닝이 가능합니다. 스펙을 꿰뚫고 있습니다.   
