@@ -7,7 +7,11 @@
 - ES6+(중)
 	- 동적 타입, 실행컨텍스트, 비동기 관리에 대해 설명할 수 있습니다.
 - C#(하)
-- Spring MVC 서블릿 기반 WAS
+- Spring MVC 서블릿 기반 WAS (중하)
+	- Junit, REST Docs, JPA, QueryDSL, Actutator, JMX
+- Spring Cloud (하)
+	- Eureka, Hystrix, Spring Cloud Config
+
 - Flask, NodeJS 이벤트 루프 기반 WAS
 - Vue(하), React(하)
 - MSSQL(중)
@@ -21,14 +25,13 @@
 Oracle Database, AWS EC2, Apache Tomcat, Flask, Java, JavaScript, MSSQL(Microsoft SQL Server), Python, Spring, Google Dialogflow, ASP.NET, JSP, MyBatis, NginX, RabbitMQ
 
 ## 제가 생각하는 상중하
-- 상 : 실제 물리적 작동 및 엔진을 완벽히 파악하고 있으며, 튜닝이 가능합니다. 스펙을 꿰뚫고 있습니다. 스택오버플로우에서 대접을 받을 수 있습니다.
-- 중 : 자유로운 작성이 가능하며, 구조와 퍼포먼스를 고려합니다. 기본입니다. (이립)
-- 하 : 코드 파악이 가능하며, 작업이 가능합니다. 
+- 상 : 실제 물리적 작동 및 엔진을 완벽히 파악하고 있으며, 튜닝이 가능합니다. 스펙을 꿰뚫고 있습니다.   
+- 중 : 자유로운 작성이 가능하며, 구조와 퍼포먼스를 고려합니다. 기본입니다. (이립)   
+- 하 : 코드 파악이 가능하며, 작업이 가능합니다.   
 
 ## 그 외,
 - OOP에서의 추상화와, 디자인 패턴(GoF)을 항상 고려합니다.
 - 서블릿 기반과 이벤트 루프 기반 웹 서버의 차이를 명확히 압니다.
-- 인터페이스 구현에 흥미가 높습니다(RestAPI, DB Link, pub/sub, 메시징 큐 등...)
    
 - 프로개발자라면, 클린 코드를 위해 항상 고심하고, 공부해야 한다고 생각합니다.   
    - 여러 팀 프로젝트를 하면서 느꼈던 것은,  
