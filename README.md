@@ -1,15 +1,14 @@
-
-[자기 소개](https://github.com/Iol-lshh)
+# 소개
+>[자기 소개 경로](https://github.com/Iol-lshh)
 
 # 목차
-
-### SpringMVC JPA 이용한, 게시글 REST API
+## SpringMVC JPA 이용한, 게시글 REST API
 >기간 : 2022.06   
 >SpringBoot + JPA   
 >[forum_SpringMVC](https://github.com/Iol-lshh/forum_SpringMVC)   
     
      
-### Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
+## Spring을 이용한, 도로교통공사 api 활용 커뮤니티 페이지
 >기간 : 2020.12   
 >Spring + Apache Tomcat + MyBatis   
 >전체 구조 기획/설계, 서버 설정/구축, RESTful API 제작(SPA 지향)   
@@ -18,7 +17,7 @@
 >[Java 프레임웍기반 풀스텍 양성(B) 2차프로젝트발표 - 팀:LTNS (시연 영상)](https://www.youtube.com/watch?v=V1btqGmrHO0&feature=youtu.be)   
 
 
-### Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
+## Jsp를 이용한, 게시글 파일 저장방식 커뮤니티 페이지
 >기간 : 2020.11   
 >JSP + Apach Tomcat   
 >전체 구조 기획/설계, 서버 설정/구축, CRUD 기본 페이지 제작, 파일 HTML 파싱   
@@ -27,7 +26,7 @@
 >[Java 프레임웍기반 풀스텍 양성(B) 1차프로젝트발표 - 팀:LTNS (시연 영상)](https://www.youtube.com/watch?v=tLHih5xjFKA) 
 
 
-### Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기 
+## Java Swing을 활용한, 테블릿 메뉴판 연동 음식점 포스기 
 >기간 : 2020.07   
 >Java + Java Swing   
 >구조 기획/설계, 서버 설정/제작, 프로그래밍   
