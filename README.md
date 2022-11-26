@@ -1,6 +1,8 @@
 # 소개
 >[자기 소개 경로](https://github.com/Iol-lshh)
 
+---
+
 # 목차
 ## SpringMVC JPA 이용한, 게시글 REST API
 >기간 : 2022.06   
@@ -35,7 +37,7 @@
 .pdf](https://github.com/markhong93/portfolio/blob/main/Java%20Swing%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8C%EB%B8%94%EB%A6%BF%20%EB%A9%94%EB%89%B4%ED%8C%90%20%EC%97%B0%EB%8F%99%20%EC%9D%8C%EC%8B%9D%EC%A0%90%20%ED%8F%AC%EC%8A%A4%EA%B8%B0/Java%20Swing%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8C%EB%B8%94%EB%A6%BF%20%EB%A9%94%EB%89%B4%ED%8C%90%20%EC%97%B0%EB%8F%99%20%EC%9D%8C%EC%8B%9D%EC%A0%90%20%ED%8F%AC%EC%8A%A4%EA%B8%B0.pdf)   
    
 
-### (한이음) 부동산 실거래가 예측 챗봇
+## (한이음) 부동산 실거래가 예측 챗봇
 >기간 : 2019   
 >Python Flask AWS EC2 Google Dialogflow   
 >여러 모델들을 통한 부동산 실거래가 예측   
