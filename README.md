@@ -1,5 +1,5 @@
 
-[자기 소개].(https://github.com/Iol-lshh)
+[자기 소개](https://github.com/Iol-lshh)
 
 # 목차
 
