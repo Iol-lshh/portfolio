@@ -89,6 +89,3 @@ DELETE FROM SOURCE_DISTRIBUTION_QUEUE WHERE EmployeeId = @EMPLYEEID
 --SELECT * FROM SOURCE_DISTRIBUTION_QUEUE
 ROLLBACK
 SET NOCOUNT OFF
-
--- => 과정의 %는 전체 실행계획에서의 비용 비율을 의미한다.
--- => 서브쿼리를 지양하고, 변수/cte/임시테이블을 써야하는 이유이다!
