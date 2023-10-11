@@ -1,15 +1,19 @@
 # rpi와 shairport-sync
 - shairport-sync는 airplay2를 지원한다.
-- 목표:
+## 목표: 
   - 로컬 망 내, airplay2 네트워크 스트리머를 라즈베리 파이로 만들기
+## 배경:
+  - 애플 뮤직에서는 ALAC을 통해, 나름 고해상력의 음원을 스트리밍한다.
+  - 애플의 휴대기기는 블루투스 코덱을 AAC만 지원하며, AAC는 손실률이 크다.
+  - 고해상력의 음원을 이용하는 방법은, airplay2를 받는 네트워크 플레이어를 이용하는 것. (~~아니면 유선으로 연결해 듣거나..~~)
   - 네트워크 플레이어는 어마어마한 고가를 자랑하는 장비이다.
-  - 하지만 shairport-sync 덕분에, 라즈베리 파이를 이용하여, 쉽게 구성 가능하다.
+  - shairport-sync 덕분에, 라즈베리 파이를 이용하여, 쉽게 구성 가능하다.
   - rpi위에서 돌아가고 있는 다른 서비스와 독립적인 환경으로 구동하기 위해, 도커 위에 올리기로 한다.
 - 참조:
   - [깃헙](https://github.com/mikebrady/shairport-sync)
   - [돜헙](https://hub.docker.com/r/mikebrady/shairport-sync)
 
-## usb를 이용한 도커 컨테이너 생성 실행
+## 구현
 1. usb 위치 확인
 ```sh
 $ aplay -l
@@ -21,7 +25,8 @@ card 1: AMP [S3 Pro DAC & AMP], device 0: USB Audio [USB Audio]
 ```
 - card=1, device=0 임을 알 수 있다.
 
-2. 생성 실행
+2. 도커
+- 도커에 대한 세팅과 기본 옵션에 대한 설명은 생략한다.
 ```sh
 sudo docker run -d --restart unless-stopped --net host --device /dev/snd  \
    mikebrady/shairport-sync -a rpi-shairport -- -d hw:CARD=1,DEV=0 -c PCM
